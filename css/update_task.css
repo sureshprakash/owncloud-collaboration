@@ -1,0 +1,51 @@
+#title
+{	
+	text-align: center; 
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+textarea[name='description']
+{
+	max-width: 950px;
+	max-height: 500px;
+	width: 750px;
+	height: 150px;
+}
+
+input[name='title']
+{
+	width: 400px;
+}
+
+input[name='reason']
+{
+	width: 400px;
+}
+
+#deadline_time
+{
+	width: 150px;
+}
+
+#submit-form
+{
+	text-align: center;
+}
+
+.required
+{
+	color: red;
+	font-size: 16px;
+}
+
+#skillset_link
+{
+	color: blue;
+}
+
+#skillset_link:hover
+{
+	text-decoration: underline;
+}

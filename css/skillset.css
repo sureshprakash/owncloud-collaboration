@@ -1,0 +1,30 @@
+#title
+{	
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#skills
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#skills td, #skills th
+{
+	text-align: center;
+	padding: 5px;
+}
+
+#submit_btn
+{
+	text-align: center;
+}
+
+input[type="number"]
+{
+	width: 60px;
+}

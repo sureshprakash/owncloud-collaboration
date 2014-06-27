@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<database>
+	<name>*dbname*</name>
+	<create>true</create>
+	<overwrite>false</overwrite>
+	<charset>utf8</charset>
+	<table>
+		<name>*dbprefix*collaboration_task</name>
+		<declaration>
+			<field>
+				<name>tid</name>
+				<type>integer</type>
+				<autoincrement>true</autoincrement>
+				<default>0</default>
+				<unsigned>true</unsigned>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>title</name>
+				<type>text</type>
+				<length>100</length>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>description</name>
+				<type>text</type>
+				<length>3000</length>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>creator</name>
+				<type>text</type>
+				<length>64</length>
+			</field>
+			
+			<field>
+				<name>pid</name>
+				<type>integer</type>
+				<unsigned>true</unsigned>
+				<notnull>true</notnull>
+			</field>
+		
+			<field>
+				<name>priority</name>
+				<type>integer</type>
+				<length>1</length>
+				<unsigned>true</unsigned>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>starting_time</name>
+				<type>timestamp</type>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>ending_time</name>
+				<type>timestamp</type>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>event_id</name>
+				<type>integer</type>
+				<notnull>true</notnull>
+				<unsigned>true</unsigned>
+			</field>
+
+			<index>
+				<name>pk_collaboration_task</name>
+				<unique>true</unique>
+				<field>
+					<name>tid</name>
+					<sorting>ascending</sorting>
+				</field>
+			</index>
+			
+			<!--foreign>
+		        <name>fk_collaboration_task_pid</name>
+		        <field>pid</field>
+		        <references>
+		            <table>*dbprefix*collaboration_project</table>
+		            <field>pid</field>
+		        </references>
+		        <ondelete>restrict</ondelete>
+		        <onupdate>cascade</onupdate>
+        	</foreign-->
+		</declaration>
+	</table> 
+	
+	<table>
+		<name>*dbprefix*collaboration_task_status</name>
+		<declaration>
+			<field>
+				<name>tid</name>
+				<type>integer</type>
+				<unsigned>true</unsigned>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>status</name>
+				<type>text</type>
+				<length>30</length>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>last_updated_time</name>
+				<type>timestamp</type>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>member</name>
+				<type>text</type>
+				<length>64</length>
+				<notnull>false</notnull>
+			</field>
+			
+			<field>
+				<name>reason</name>
+				<type>text</type>
+				<length>300</length>
+			</field>
+			
+			<index>
+				<name>pk_collaboration_task_status</name>
+				<unique>true</unique>
+				<field>
+					<name>tid</name>
+					<sorting>ascending</sorting>
+				</field>
+				
+				<field>
+					<name>status</name>
+					<sorting>ascending</sorting>
+				</field>
+				
+				<field>
+					<name>last_updated_time</name>
+					<sorting>ascending</sorting>
+				</field>
+			</index>
+		</declaration>
+	</table>
+
+	<table>
+		<name>*dbprefix*collaboration_project</name>
+		<declaration>
+			<field>
+				<name>pid</name>
+				<type>integer</type>
+				<autoincrement>true</autoincrement>
+				<default>0</default>
+				<unsigned>true</unsigned>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>title</name>
+				<type>text</type>
+				<length>100</length>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>description</name>
+				<type>text</type>
+				<length>3000</length>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>starting_date</name>
+				<type>timestamp</type>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>ending_date</name>
+				<type>timestamp</type>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>last_updated</name>
+				<type>timestamp</type>
+				<notnull>true</notnull>
+			</field>
+	
+			<field>
+				<name>completed</name>
+				<type>boolean</type>
+				<notnull>true</notnull>
+				<default>false</default>
+			</field>
+						
+			<field>
+				<name>calendar_id</name>
+				<type>integer</type>
+				<notnull>true</notnull>
+				<unsigned>true</unsigned>
+			</field>
+					
+			<index>
+				<name>pk_collaboration_project</name>
+				<primary>true</primary>
+				<field>
+					<name>pid</name>
+					<sorting>ascending</sorting>
+				</field>
+			</index>
+			
+			<index>
+				<name>uk_collaboration_project</name>
+				<unique>true</unique>
+				<field>
+					<name>title</name>
+					<sorting>ascending</sorting>
+				</field>
+			</index>
+		</declaration>
+	</table>
+
+	<table>
+		<name>*dbprefix*collaboration_post</name>
+		<declaration>
+			<field>
+				<name>post_id</name>
+				<type>integer</type>
+				<length>20</length>
+				<autoincrement>true</autoincrement>
+				<default>0</default>
+				<unsigned>true</unsigned>
+				<notnull>true</notnull>
+			</field>
+	
+			<field>
+				<name>title</name>
+				<type>text</type>
+				<length>100</length>
+				<notnull>true</notnull>
+			</field>
+		
+			<field>
+				<name>content</name>
+				<type>text</type>
+				<length>3000</length>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>creator</name>
+				<type>text</type>
+				<length>64</length>
+				<default>NULL</default>
+			</field>
+
+			<field>
+				<name>pid</name>
+				<type>integer</type>
+				<default>NULL</default>
+				<unsigned>true</unsigned>
+				<notnull>false</notnull>
+			</field>
+			
+			<field>
+				<name>tid</name>
+				<type>integer</type>
+				<default>NULL</default>
+				<unsigned>true</unsigned>
+				<notnull>false</notnull>
+			</field>
+			
+			<field>
+				<name>type</name>
+				<type>text</type>
+				<length>35</length>
+				<notnull>true</notnull>
+			</field>
+		
+			<field>
+				<name>time</name>
+				<type>timestamp</type>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>post_to_all</name>
+				<type>boolean</type>
+				<default>true</default>
+				<notnull>true</notnull>
+			</field>
+			
+			<index>
+				<name>pk_collaboration_post</name>
+				<unique>true</unique>
+				<field>
+					<name>post_id</name>
+					<sorting>ascending</sorting>
+				</field>
+			</index>
+		</declaration>
+	</table>
+	
+
+	<table>
+		<name>*dbprefix*collaboration_works_on</name>
+		<declaration>
+
+			<field>
+				<name>pid</name>
+				<type>integer</type>
+				<unsigned>true</unsigned>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>member</name>
+				<type>text</type>
+				<length>64</length>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>role</name>
+				<type>text</type>
+				<length>30</length>
+				<notnull>true</notnull>
+			</field>
+			
+			<index>
+				<name>pk_collaboration_works_on</name>
+				<unique>true</unique>
+				<field>
+					<name>pid</name>
+					<sorting>ascending</sorting>
+				</field>
+				
+				<field>
+					<name>member</name>
+					<sorting>ascending</sorting>
+				</field>
+				
+				<field>
+					<name>role</name>
+					<sorting>ascending</sorting>
+				</field>
+			</index>
+			
+		</declaration>
+	</table>
+
+	<table>
+		<name>*dbprefix*collaboration_notification</name>
+		<declaration>
+			<field>
+				<name>post_id</name>
+				<type>integer</type>
+				<length>20</length>
+				<unsigned>true</unsigned>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>visible_to</name>
+				<type>text</type>
+				<length>64</length>
+				<notnull>true</notnull>
+			</field>
+			
+			<index>
+				<name>pk_collaboration_notification</name>
+				<unique>true</unique>
+				
+				<field>
+					<name>post_id</name>
+					<sorting>ascending</sorting>
+				</field>
+				
+				<field>
+					<name>visible_to</name>
+					<sorting>ascending</sorting>
+				</field>	
+			</index>
+		</declaration>
+	</table>
+	 
+	<table>
+		<name>*dbprefix*collaboration_comment</name>
+		<declaration>
+			<field>
+				<name>comment_id</name>
+				<type>integer</type>
+				<length>20</length>
+				<default>0</default>
+				<autoincrement>true</autoincrement>
+				<unsigned>true</unsigned>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>content</name>
+				<type>text</type>
+				<length>3000</length>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>creator</name>
+				<type>text</type>
+				<length>64</length>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>post_id</name>
+				<type>integer</type>
+				<length>20</length>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>time</name>
+				<type>timestamp</type>
+				<notnull>true</notnull>
+			</field>
+			
+			<index>
+				<name>pk_collaboration_comment</name>
+				<unique>true</unique>
+				<field>
+					<name>comment_id</name>
+					<sorting>ascending</sorting>
+				</field>
+			</index>
+			
+		</declaration>
+	</table>
+	
+	<table>
+		<name>*dbprefix*collaboration_skill</name>
+		<declaration>
+			<field>
+				<name>member</name>
+				<type>text</type>
+				<length>64</length>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>skill</name>
+				<type>text</type>
+				<length>30</length>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>experience</name>
+				<type>integer</type>
+				<default>0</default>
+				<length>2</length>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>exp_on_date</name>
+				<type>date</type>
+				<notnull>true</notnull>
+			</field>
+			
+			<field>
+				<name>expertise</name>
+				<type>integer</type>
+				<default>0</default>
+				<length>1</length>
+				<notnull>true</notnull>
+			</field>
+			
+			<index>
+				<name>pk_collaboration_skill</name>
+				<unique>true</unique>
+				<field>
+					<name>member</name>
+					<sorting>ascending</sorting>
+				</field>
+				
+				<field>
+					<name>skill</name>
+					<sorting>ascending</sorting>
+				</field>
+			</index>
+			
+		</declaration>
+	</table>  
+</database>

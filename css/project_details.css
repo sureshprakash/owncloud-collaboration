@@ -1,0 +1,40 @@
+#title
+{	
+	text-align: center; 
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#details td
+{
+	padding: 3px;
+}
+
+#details tr td:nth-child(1)
+{
+	font-weight: bold;
+}
+
+.old_mem_role
+{
+	font-weight: bold;
+}
+
+#members_list td
+{
+	padding: 5px;
+	border: 1px solid black;
+}
+
+#members_list th
+{
+	text-align: center;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+#message
+{
+	color: red;
+}

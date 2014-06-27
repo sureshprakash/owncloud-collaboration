@@ -1,0 +1,694 @@
+# Translators:
+# sureshprakash <monni.suresh@gmail.com>, 2014
+# monni_suresh <sureshsonait@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Collaboration\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-04-15 19:41+0530\n"
+"PO-Revision-Date: 2014-04-15 14:29+0000\n"
+"Last-Translator: monni_suresh <sureshsonait@gmail.com>\n"
+"Language-Team: Tamil (http://www.transifex.com/projects/p/collaboration-1/language/ta/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: add_skills.php:18 submit_change_project.php:18 submit_change_task.php:18
+#: submit_new_notification.php:15 submit_new_project.php:18
+#: submit_new_task.php:18
+msgid "Success"
+msgstr "வெற்றி"
+
+#: add_skills.php:19
+msgid "Skills are successfully added."
+msgstr "திறன்கள் வெற்றிகரமாக சேர்க்கப்பட்டன."
+
+#: add_skills.php:23 submit_change_project.php:23 submit_change_task.php:23
+#: submit_new_project.php:23 submit_new_task.php:25
+msgid "Failed"
+msgstr "தோல்வியுற்றது"
+
+#: add_skills.php:24
+msgid "Unable to add skills. Please try again later."
+msgstr "திறன்களை சேர்க்க இயலவில்லை. தயவு செய்து பின்னர் முயர்ச்சிக்கவும்."
+
+#: ajax/create_comment.php:36 ajax/edit_comment.php:26
+#: ajax/load_project_details.php:57 ajax/load_project_details.php:62
+#: templates/comment.php:26 templates/comment.php:77 templates/projects.php:78
+#: templates/projects.php:85
+#, php-format
+msgid "On %s at %s"
+msgstr "%s அன்று %s மணிக்கு"
+
+#: ajax/create_comment.php:40 ajax/load_project_details.php:48
+#: ajax/load_tasks.php:54 templates/comment.php:33 templates/comment.php:85
+#: templates/comment.php:115 templates/comment.php:132
+#: templates/project_details.php:135 templates/projects.php:64
+#: templates/task_details.php:128 templates/tasks.php:155
+msgid "Edit"
+msgstr "திருத்து"
+
+#: ajax/create_comment.php:44 templates/comment.php:39
+#: templates/comment.php:91 templates/update_project.php:133
+msgid "Delete"
+msgstr "நீக்கு"
+
+#: ajax/load_posts.php:50 templates/dashboard.php:54
+msgid "Comments"
+msgstr "கருத்துகள்"
+
+#: ajax/load_posts.php:57 templates/dashboard.php:65
+#, php-format
+msgid "Project: %s"
+msgstr "திட்டம்: %s"
+
+#: ajax/load_posts.php:61 templates/dashboard.php:73
+#, php-format
+msgid "On %s at %s by %s"
+msgstr "%s அன்று %s மணிக்கு %s ஆல்"
+
+#: ajax/load_tasks.php:49 templates/projects.php:55 templates/tasks.php:144
+msgid "View details"
+msgstr "விவரங்களைக் காண்"
+
+#: ajax/load_tasks.php:61 templates/tasks.php:182
+#, php-format
+msgid "Status: %s"
+msgstr "நிலை: %s"
+
+#: ajax/load_tasks.php:65 templates/tasks.php:189
+#, php-format
+msgid "Deadline: %s"
+msgstr "காலக்கெடு: %s"
+
+#: appinfo/app.php:28
+msgid "Collaboration"
+msgstr "குழுப்பணி"
+
+#: js/comment.js:27
+msgid "Edit Post"
+msgstr "இடுகையைத் திருத்து"
+
+#: js/comment.js:45
+msgid "Edit Comment"
+msgstr "கருத்தைத் திருத்து"
+
+#: js/comment.js:124
+msgid "Post title should match the requested format"
+msgstr "இடுகை தலைப்பு கோரிய வடிவமைப்புடன் பொருந்த வேண்டும்"
+
+#: js/comment.js:128
+msgid "Post content cannot be empty"
+msgstr "இடுகை உள்ளடக்கம் காலியாக இருக்கக்கூடாது"
+
+#: js/comment.js:180 js/comment.js:296
+msgid "Comment cannot be empty"
+msgstr "கருத்து காலியாக இருக்கக்கூடாது"
+
+#: js/dashboard.js:26 js/notify.js:24 js/projects.js:27 js/report.js:9
+#: js/tasks.js:24 js/tasks.js:30 js/update_task.js:46
+msgid "No matches found!"
+msgstr "எதுவும் கிடைக்கவில்லை"
+
+#: js/notify.js:32
+msgid "Do not notify anybody"
+msgstr "யாருக்கும் தெரிவிக்காதே"
+
+#: js/notify.js:33
+msgid "Notify only to the members specified below"
+msgstr "கீழ்க்கண்ட உறுப்பினர்களுக்கு மட்டும் தெரிவி"
+
+#: js/notify.js:38
+msgid "Select all"
+msgstr "அனைத்தையும் தெரிவுசெய்"
+
+#: js/notify.js:39
+msgid "Select none"
+msgstr "எதையும் தெரிவுசெய்யாதே"
+
+#: js/report.js:136 templates/report.php:34
+msgid "Kindly select project and report type to generate the report"
+msgstr "தயவுசெய்து திட்டத்தையும், அறிக்கை வகையையும் தேர்வு செய்யவும்"
+
+#: js/report.js:162
+msgid "No tasks available in this project"
+msgstr "இந்தத் திட்டத்தில் எந்த பணிகளும் இல்லை"
+
+#: js/report.js:199
+msgid "task(s)"
+msgstr "பணி(கள்)"
+
+#: js/report.js:203
+msgid "Total number of tasks: "
+msgstr "மொத்த பணிகளின் எண்ணிக்கை: "
+
+#: js/report.js:218 templates/tasks.php:45
+msgid "Cancelled"
+msgstr "ரத்துசெய்யப்பட்டது"
+
+#: js/report.js:221 templates/tasks.php:53
+msgid "Completed"
+msgstr "முடிவுற்றது"
+
+#: js/report.js:224 templates/tasks.php:61
+msgid "Held"
+msgstr "தற்காலிகமாக நிறுத்தப்பட்டது"
+
+#: js/report.js:227 templates/tasks.php:37
+msgid "In Progress"
+msgstr "செயல்பாட்டில்"
+
+#: js/report.js:230 templates/tasks.php:69
+msgid "Unassigned"
+msgstr "ஒதுக்கப்படாதது"
+
+#: js/report.js:233 templates/tasks.php:77
+msgid "Verified"
+msgstr "சரிபார்க்கப்பட்டது"
+
+#: js/report.js:349
+msgid "Number of verified tasks: "
+msgstr "சரிபார்க்கப்பட்ட பணிகளின் எண்ணிக்கை:"
+
+#: js/report.js:349
+msgid "Number of pending tasks: "
+msgstr "நிலுவையிலுள்ள பணிகளின் எண்ணிக்கை:"
+
+#: js/report.js:355
+msgid "Progressed"
+msgstr "முடிந்தது"
+
+#: js/report.js:355
+msgid "To progress"
+msgstr "முடிக்க வேண்டியது"
+
+#: js/report.js:355
+msgid "Crossed deadline"
+msgstr "காலக்கெடுவைத் தாண்டியது"
+
+#: js/report.js:429
+msgid ""
+"Number of tasks carried out by each member (working on this project) is "
+"presented below"
+msgstr "(இத்திட்டத்தில் பணியாற்றும்) ஒவ்வொரு உறுப்பினர் முடித்த பணிகளின் எண்ணிக்கை கீழே வழங்கப்பட்டுள்ளது"
+
+#: js/skillset.js:41 templates/skillset.php:13
+#: templates/skillset_details.php:25
+msgid "Skill"
+msgstr "திறன்"
+
+#: js/skillset.js:45 lib/skillset.php:12
+msgid "Beginner"
+msgstr "துவக்கநிலை"
+
+#: js/skillset.js:46 lib/skillset.php:15
+msgid "Intermediate"
+msgstr "இடைநிலை"
+
+#: js/skillset.js:47 lib/skillset.php:18
+msgid "Expert"
+msgstr "நிபுணர்"
+
+#: js/skillset.js:57 js/skillset.js:102
+msgid "Add Skill"
+msgstr "திறனை சேர்"
+
+#: js/tasks.js:50 templates/update_task.php:174
+msgid "Reason"
+msgstr "காரணம்"
+
+#: js/update_project.js:63
+msgid "You cannot make changes on a completed project"
+msgstr "தங்களால் முடிவுற்ற திட்டத்தில் திருத்தம் செய்ய இயலாது"
+
+#: js/update_project.js:86
+msgid "Username"
+msgstr "பயனர்பெயர்"
+
+#: js/update_project.js:89 templates/project_details.php:108
+msgid "Role"
+msgstr "பங்கு"
+
+#: js/update_project.js:92
+msgid "Email"
+msgstr "மின்னஞ்சல்"
+
+#: js/update_project.js:95
+msgid "Mobile"
+msgstr "அலைபேசி"
+
+#: js/update_project.js:102 js/update_project.js:149
+#: templates/update_project.php:148
+msgid "Add Member"
+msgstr "உறுப்பினரை சேர்"
+
+#: js/update_project.js:173 js/update_project.js:201
+msgid "Another project with this title already exists."
+msgstr "பிரிதொறு திட்டம் இதே தலைப்பில் உள்ளது."
+
+#: js/update_project.js:243
+msgid ""
+"Project with pending tasks cannot be completed. See report for more details"
+msgstr "நிலுவையிலுள்ள பணிகளைக்கொண்ட திட்டத்தை முடிக்க இயலாது. மேலதிக விவரங்களுக்கு அறிக்கையைக் காண்க"
+
+#: js/update_task.js:63
+msgid "You cannot make changes on a cancelled task."
+msgstr "தங்களால் ரத்து செய்யப்பட்ட பணியை மாற்ற இயலாது."
+
+#: js/update_task.js:64
+msgid "You cannot make changes on a verified task."
+msgstr "தங்களால் சரிபார்க்கப்பட்ட பணியை மாற்ற இயலாது."
+
+#: lib/tasks.php:12 templates/update_task.php:115
+msgid "Very High"
+msgstr "மிக அதிகம்"
+
+#: lib/tasks.php:14 templates/update_task.php:116
+msgid "High"
+msgstr "அதிகம்"
+
+#: lib/tasks.php:16 templates/update_task.php:117
+msgid "Normal"
+msgstr "சாதாரணம்"
+
+#: lib/tasks.php:18 templates/update_task.php:118
+msgid "Low"
+msgstr "குறைவு"
+
+#: lib/tasks.php:20 templates/update_task.php:119
+msgid "Very Low"
+msgstr "மிகக்குறைவு"
+
+#: lib/tasks.php:141 templates/comment.php:123 templates/comment.php:138
+msgid "Cancel"
+msgstr "ரத்துசெய்"
+
+#: lib/tasks.php:144
+msgid "Finish"
+msgstr "முடிக்க"
+
+#: lib/tasks.php:147
+msgid "Hold"
+msgstr "தற்காலிக நிறுத்தம் செய்க"
+
+#: lib/tasks.php:150
+msgid "Assign"
+msgstr "நியமி"
+
+#: lib/tasks.php:153
+msgid "Resume"
+msgstr "தொடர்க"
+
+#: submit_change_project.php:19
+#, php-format
+msgid "Project '%s' has been updated successfully."
+msgstr "'%s' திட்டம் வெற்றிகரமாக திருத்தப்பட்டது."
+
+#: submit_change_project.php:24
+#, php-format
+msgid "Project '%s' cannot be updated. Kindly try after some time."
+msgstr "'%s' திட்டத்தை திருத்த முடியவில்லை. தயவு செய்து பின்னர் முயற்சிக்கவும்."
+
+#: submit_change_task.php:19
+#, php-format
+msgid "Task '%s' has been successfully updated."
+msgstr "'%s' பணி வெற்றிகரமாக திருத்தப்பட்டது."
+
+#: submit_change_task.php:24
+#, php-format
+msgid "Task '%s' cannot be updated. Kindly try after some time."
+msgstr "'%s' பணியை திருத்த முடியவில்லை. தயவு செய்து பின்னர் முயற்சிக்கவும்."
+
+#: submit_new_notification.php:16
+#, php-format
+msgid "Notification '%s' has been posted successfully."
+msgstr "'%s' அறிவிப்பு வெற்றிகரமாக இடப்பட்டது."
+
+#: submit_new_project.php:19
+#, php-format
+msgid "Project '%s' has been created successfully."
+msgstr "'%s' திட்டம் வெற்றிகரமாக உருவாக்கப்பட்டது."
+
+#: submit_new_project.php:24
+#, php-format
+msgid "Project '%s' cannot be created. Kindly try after some time."
+msgstr "'%s' திட்டம் உருவாக்க முடியவில்லை. தயவு செய்து பின்னர் முயற்சிக்கவும்."
+
+#: submit_new_task.php:19
+#, php-format
+msgid "Task '%s' has been created successfully."
+msgstr "'%s' பணி வெற்றிகரமாக உருவாக்கப்பட்டது."
+
+#: submit_new_task.php:26
+#, php-format
+msgid "Task '%s' cannot be created. Kindly try after some time."
+msgstr "'%s' பணியை உருவாக்க முடியவில்லை."
+
+#: submit_notify.php:15 submit_skillset.php:16 submit_update_project.php:35
+#: submit_update_task.php:45 submit_update_task.php:76
+#: templates/event_edit_form.php:55 templates/event_form.php:46
+msgid "Loading..."
+msgstr "ஏற்றப்படுகிறது..."
+
+#: submit_notify.php:16
+#, php-format
+msgid "Creating notification '%s'. Please be patient."
+msgstr "'%s' அறிவிப்பு உருவாக்கப்படுகிறது. தயவுசெய்து காத்திருக்கவும்."
+
+#: submit_skillset.php:17
+msgid "Adding skills. Please be patient."
+msgstr "திறன் சேர்க்கப்படுகிறது. தயவு செய்து பொறுமை காக்கவும்."
+
+#: submit_update_project.php:36
+#, php-format
+msgid "Updating project '%s'. Please be patient."
+msgstr "'%s' திட்டம் திருத்தப்படுகிறது. தயவுசெய்து பொறுமை காக்கவும்."
+
+#: templates/comment.php:47 templates/comment.php:53
+msgid "View Details"
+msgstr "விவரங்களைக் காண்"
+
+#: templates/comment.php:104
+msgid "Write new comment: "
+msgstr "புதிய கருத்தை எழுதுக:"
+
+#: templates/comment.php:108
+msgid "Submit"
+msgstr "சமர்ப்பிக்க"
+
+#: templates/comment.php:117
+msgid "Updated post title"
+msgstr "திருத்தப்பட்ட இடுகை தலைப்பு"
+
+#: templates/comment.php:119
+msgid "Updated post content"
+msgstr "திருத்தப்பட்ட இடுகை உள்ளடக்கம்"
+
+#: templates/comment.php:122 templates/comment.php:137
+#: templates/skillset.php:35 update_project.php:23 update_task.php:28
+msgid "Update"
+msgstr "திருத்து"
+
+#: templates/comment.php:134
+msgid "Updated comment"
+msgstr "திருத்தப்பட்ட கருத்து"
+
+#: templates/dashboard.php:7 templates/tabs.php:8
+msgid "Dashboard"
+msgstr "இடுகைமுகப்பு"
+
+#: templates/dashboard.php:16 templates/tasks.php:84
+msgid "Filter by project:"
+msgstr "திட்டத்தை வைத்து வடிகட்டு"
+
+#: templates/dashboard.php:18 templates/projects.php:25 templates/tasks.php:28
+#: templates/tasks.php:86
+msgid "ALL"
+msgstr "அனைத்தும்"
+
+#: templates/dashboard.php:34
+msgid "Sorry, no post is available to display."
+msgstr "மன்னிக்கவும், காண்பிக்க இடுகை கிடைக்கவில்லை."
+
+#: templates/event_edit_form.php:55 templates/event_form.php:46
+#, php-format
+msgid "Creating task '%s'. Please be patient."
+msgstr "'%s' உருவாக்கப்படுகிறது. தயவு செய்து பொறுமை காக்கவும்."
+
+#: templates/event_edit_form.php:60 templates/event_form.php:50
+msgid "Access Denied"
+msgstr "அணுகல் மறுக்கப்பட்டது"
+
+#: templates/event_edit_form.php:60 templates/event_form.php:50
+#, php-format
+msgid "Task '%s' cannot be created."
+msgstr "'%s' பணியை உருவாக்க முடியவில்லை."
+
+#: templates/notify.php:7 templates/notify.php:77 templates/tabs.php:72
+msgid "Notify"
+msgstr "தெரிவி"
+
+#: templates/notify.php:15
+msgid ""
+"Sorry, you are not into any project yet. You can notify only after joining a"
+" project."
+msgstr "மன்னிக்கவும், தாங்கள் இன்னும் எந்த திட்டத்திலும் இல்லை. திட்டத்தில் சேர்ந்த பின்னர் நீங்கள் அறிவிப்பை எழுதலாம்."
+
+#: templates/notify.php:26 templates/task_details.php:13
+#: templates/update_task.php:35
+msgid "Project"
+msgstr "திட்டம்"
+
+#: templates/notify.php:49
+msgid "Notification Subject"
+msgstr "அறிவிப்புப் பொருள்"
+
+#: templates/notify.php:63
+msgid "Notification Message"
+msgstr "அறிவிப்பு செய்தி"
+
+#: templates/notify.php:86
+msgid "Notify all"
+msgstr "அனைவருக்கும் தெரிவி"
+
+#: templates/notify.php:101
+msgid "Send"
+msgstr "அனுப்புக"
+
+#: templates/project_details.php:7
+msgid "Project Details"
+msgstr "திட்ட விவரங்கள்"
+
+#: templates/project_details.php:13 templates/update_project.php:31
+msgid "Project Title"
+msgstr "திட்ட தலைப்பு"
+
+#: templates/project_details.php:29 templates/update_project.php:46
+msgid "Description"
+msgstr "விளக்கம்"
+
+#: templates/project_details.php:43 templates/task_details.php:70
+#: templates/update_project.php:77 templates/update_task.php:193
+msgid "Deadline"
+msgstr "காலக்கெடு"
+
+#: templates/project_details.php:59 templates/task_details.php:109
+#: templates/update_task.php:126
+msgid "Status"
+msgstr "நிலை"
+
+#: templates/project_details.php:70
+#, php-format
+msgid "Completed on %s"
+msgstr "%s அன்று முடிவுற்றது"
+
+#: templates/project_details.php:78
+msgid "In progress"
+msgstr "செயல்பாட்டில் உள்ளது"
+
+#: templates/project_details.php:86 templates/update_project.php:100
+msgid "Members"
+msgstr "உறுப்பினர்கள்"
+
+#: templates/project_details.php:109
+msgid "Member(s)"
+msgstr "உறுப்பினர்(கள்)"
+
+#: templates/projects.php:7 templates/tabs.php:41
+msgid "Projects"
+msgstr "திட்டங்கள்"
+
+#: templates/projects.php:13
+msgid "Sorry, no project is available yet to display."
+msgstr "மன்னிக்கவும், காண்பிக்க திட்டம் கிடைக்கவில்லை."
+
+#: templates/projects.php:23
+msgid "Search project:"
+msgstr "திட்டத்தைத் தேர்க:"
+
+#: templates/report.php:6
+msgid "Project Report"
+msgstr "திட்ட அறிக்கை"
+
+#: templates/report.php:16
+msgid "Select Project"
+msgstr "திட்டத்தைத் தேர்க"
+
+#: templates/report.php:26
+msgid "Select Report Type"
+msgstr "அறிக்கை வகையைத் தேர்க"
+
+#: templates/report.php:27
+msgid "Contribution Report"
+msgstr "பங்கு அறிக்கை"
+
+#: templates/report.php:28
+msgid "Project Timeline"
+msgstr "திட்ட காலக்கோடு"
+
+#: templates/report.php:29
+msgid "Task Status Report"
+msgstr "பணி நிலை அறிக்கை"
+
+#: templates/skillset.php:7 templates/tabs.php:80
+msgid "My Skillset"
+msgstr "என் திறன்தொகுப்பு"
+
+#: templates/skillset.php:14 templates/skillset_details.php:29
+msgid "Expertise"
+msgstr "நிபுணத்துவம்"
+
+#: templates/skillset.php:15 templates/skillset_details.php:33
+msgid "Experience"
+msgstr "அனுபவம்"
+
+#: templates/skillset.php:15
+msgid "(in years)"
+msgstr "(ஆண்டுகளில்)"
+
+#: templates/skillset.php:29
+msgid "Add a skill"
+msgstr "ஒரு திறனை சேர்க்க"
+
+#: templates/skillset_details.php:7
+msgid "Skillset"
+msgstr "திறன்தொகுப்பு"
+
+#: templates/skillset_details.php:13
+msgid "Member"
+msgstr "உறுப்பினர்"
+
+#: templates/skillset_details.php:17
+#, php-format
+msgid "Number of tasks in project<br />'%s'"
+msgstr "'%s'<br />திட்டத்தில் உள்ள பணிகளின் எண்ணிக்கை"
+
+#: templates/skillset_details.php:21
+msgid "Number of tasks in all projects"
+msgstr "எல்லா திட்டங்களிலும் உள்ள பணிகளின் எண்ணிக்கை"
+
+#: templates/skillset_details.php:48
+msgid "Skills yet to be added by member"
+msgstr "உறுப்பினர் திறன்களை சேர்க்கவில்லை"
+
+#: templates/skillset_details.php:56
+msgid "year(s)"
+msgstr "ஆண்டு(கள்)"
+
+#: templates/tabs.php:21 update_project.php:30
+msgid "Create Project"
+msgstr "திட்டத்தை உருவாக்கு"
+
+#: templates/tabs.php:29 update_task.php:35
+msgid "Create Task"
+msgstr "பணியை உருவாக்கு"
+
+#: templates/tabs.php:49 templates/tasks.php:7
+msgid "Tasks"
+msgstr "பணிகள்"
+
+#: templates/tabs.php:61
+msgid "Report"
+msgstr "அறிக்கை"
+
+#: templates/task_details.php:7
+msgid "Task details"
+msgstr "பணி விவரங்கள்"
+
+#: templates/task_details.php:28 templates/update_task.php:78
+msgid "Task Title"
+msgstr "பணி தலைப்பு"
+
+#: templates/task_details.php:42 templates/update_task.php:92
+msgid "Task Description"
+msgstr "பணி விளக்கம்"
+
+#: templates/task_details.php:56 templates/update_task.php:106
+msgid "Priority"
+msgstr "முக்கியத்துவம்"
+
+#: templates/task_details.php:84
+msgid "Task Status"
+msgstr "பணி நிலை"
+
+#: templates/task_details.php:103
+msgid "Task History:"
+msgstr "பணி வரலாறு:"
+
+#: templates/task_details.php:110
+msgid "Time"
+msgstr "நேரம்"
+
+#: templates/task_details.php:111
+msgid "Comment"
+msgstr "கருத்து"
+
+#: templates/tasks.php:18
+msgid "Filter by status:"
+msgstr "நிலையை வைத்து வடிகட்டு:"
+
+#: templates/tasks.php:100
+msgid "Show tasks:&nbsp;"
+msgstr "பணிகளைக் காண்பிக்க:&nbsp;"
+
+#: templates/tasks.php:104
+msgid "created by me"
+msgstr "என்னால் உருவாக்கப்பட்ட"
+
+#: templates/tasks.php:110
+msgid "assigned to me"
+msgstr "எனக்கு ஒதுக்கப்பட்டது"
+
+#: templates/tasks.php:124
+msgid "Sorry, no task is available to display."
+msgstr "மன்னிக்கவும், காண்பிக்க பணி கிடைக்கவில்லை."
+
+#: templates/tasks.php:201
+msgid "Kindly give your reason in passive voice"
+msgstr "தங்கள் காரணத்தை செய்பாட்டு வினை வாக்கியமாக கொடுக்க"
+
+#: templates/update_project.php:62
+msgid "Creator"
+msgstr "உருவாக்கியவர்"
+
+#: templates/update_project.php:90
+msgid "Completed?"
+msgstr "முடிவுற்றதா?"
+
+#: templates/update_project.php:144
+msgid ""
+"(If user does not exist in owncloud, user will be automatically created with"
+" password being the same as username in lower case)"
+msgstr "(பயனர் owncloudல் இல்லாவிட்டால், புது பயனர் தானாகவே சிறிய எழுத்துக்களில் பயனர்பெயரைக் கடவுச்சொல்லாகக் கொண்டு உருவாக்கப்படும்)"
+
+#: templates/update_project.php:154
+msgid "Inform member(s) via mail"
+msgstr "உறுப்பினர்(கள்)க்கு மின்னஞ்சலில் தெரிவி"
+
+#: templates/update_task.php:15
+msgid ""
+"Sorry, you are not into any project yet. You can create tasks only after "
+"joining a project."
+msgstr "மன்னிக்கவும், தாங்கள் இன்னும் எந்த திட்டத்திலும் இல்லை. திட்டத்தில் சேர்ந்த பின்னர் நீங்கள் பணிகளை உருவாக்கலாம்."
+
+#: templates/update_task.php:165
+msgid "View availablility & skillset"
+msgstr "இருப்பு & திறன்தொகுப்பைக் காண்"
+
+#: templates/update_task.php:167
+msgid "Inform member via mail"
+msgstr "உறுப்பினருக்கு மின்னஞ்சலில் தெரிவி"
+
+#: update_project.php:22
+msgid "Update Project"
+msgstr "திட்டத்தைத் திருத்து"
+
+#: update_project.php:31 update_task.php:36
+msgid "Create"
+msgstr "உருவாக்கு"
+
+#: update_task.php:27
+msgid "Update Task"
+msgstr "பணியைத் திருத்து"

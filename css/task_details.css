@@ -1,0 +1,38 @@
+#title
+{	
+	text-align: center; 
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#details tr td:nth-child(1)
+{
+	font-weight: bold;
+}
+
+#status_table tr:nth-child(2)
+{
+	font-weight: bold;
+}
+
+#status_table td, #status_table th
+{
+	border: 1px solid black;
+	padding: 3px;
+}
+
+#status_table th
+{
+	text-align: center;
+}
+
+#status_table th
+{
+	font-weight: bold;
+}
+
+#message
+{
+	color: red;
+}

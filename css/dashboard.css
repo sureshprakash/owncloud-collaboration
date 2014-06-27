@@ -1,0 +1,75 @@
+#title
+{	
+	text-align: center; 
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#project_list_container
+{
+	float: right;
+}
+
+.post_title
+{	
+	padding: 5px;
+	background-color: #62749B;
+	color: white;
+	text-align: center; 
+	font-size: 20px;
+	margin:0px 0px 0px 0px;
+	border-radius: 15px 15px 0px 0px;
+}
+
+.contents
+{	
+	height: 50%;
+	font-size: 14px;
+	padding: 10px;
+	text-align: justify;
+	text-indent: 50px;
+}
+
+.btn_comment
+{
+	color: black;
+}
+
+.details
+{
+	background-color: lightsteelblue;
+	width: 100%;
+}
+
+.comment
+{
+	width: 100%;
+	text-align: right;
+}
+
+.creation_details
+{	
+	float:right;
+	width: 50%;
+	background-color: inherit;
+	text-align: right;
+}
+
+.proj_title
+{
+	float:left;
+	text-align: left;
+	background-color: inherit;
+	width: 50%;
+	height: inherit;
+}
+
+.unit
+{
+	background-color: rgb(207,231,245);
+	width: 96%;
+	height: 100%;
+	margin: 4% 2% 4% 2%;
+	border-radius: 15px 15px 0px 0px;
+}

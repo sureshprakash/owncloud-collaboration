@@ -1,0 +1,696 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Core 6.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-04-15 19:41+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: add_skills.php:18 submit_change_project.php:18 submit_change_task.php:18
+#: submit_new_notification.php:15 submit_new_project.php:18
+#: submit_new_task.php:18
+msgid "Success"
+msgstr ""
+
+#: add_skills.php:19
+msgid "Skills are successfully added."
+msgstr ""
+
+#: add_skills.php:23 submit_change_project.php:23 submit_change_task.php:23
+#: submit_new_project.php:23 submit_new_task.php:25
+msgid "Failed"
+msgstr ""
+
+#: add_skills.php:24
+msgid "Unable to add skills. Please try again later."
+msgstr ""
+
+#: ajax/create_comment.php:36 ajax/edit_comment.php:26
+#: ajax/load_project_details.php:57 ajax/load_project_details.php:62
+#: templates/comment.php:26 templates/comment.php:77 templates/projects.php:78
+#: templates/projects.php:85
+#, php-format
+msgid "On %s at %s"
+msgstr ""
+
+#: ajax/create_comment.php:40 ajax/load_project_details.php:48
+#: ajax/load_tasks.php:54 templates/comment.php:33 templates/comment.php:85
+#: templates/comment.php:115 templates/comment.php:132
+#: templates/project_details.php:135 templates/projects.php:64
+#: templates/task_details.php:128 templates/tasks.php:155
+msgid "Edit"
+msgstr ""
+
+#: ajax/create_comment.php:44 templates/comment.php:39
+#: templates/comment.php:91 templates/update_project.php:133
+msgid "Delete"
+msgstr ""
+
+#: ajax/load_posts.php:50 templates/dashboard.php:54
+msgid "Comments"
+msgstr ""
+
+#: ajax/load_posts.php:57 templates/dashboard.php:65
+#, php-format
+msgid "Project: %s"
+msgstr ""
+
+#: ajax/load_posts.php:61 templates/dashboard.php:73
+#, php-format
+msgid "On %s at %s by %s"
+msgstr ""
+
+#: ajax/load_tasks.php:49 templates/projects.php:55 templates/tasks.php:144
+msgid "View details"
+msgstr ""
+
+#: ajax/load_tasks.php:61 templates/tasks.php:182
+#, php-format
+msgid "Status: %s"
+msgstr ""
+
+#: ajax/load_tasks.php:65 templates/tasks.php:189
+#, php-format
+msgid "Deadline: %s"
+msgstr ""
+
+#: appinfo/app.php:28
+msgid "Collaboration"
+msgstr ""
+
+#: js/comment.js:27
+msgid "Edit Post"
+msgstr ""
+
+#: js/comment.js:45
+msgid "Edit Comment"
+msgstr ""
+
+#: js/comment.js:124
+msgid "Post title should match the requested format"
+msgstr ""
+
+#: js/comment.js:128
+msgid "Post content cannot be empty"
+msgstr ""
+
+#: js/comment.js:180 js/comment.js:296
+msgid "Comment cannot be empty"
+msgstr ""
+
+#: js/dashboard.js:26 js/notify.js:24 js/projects.js:27 js/report.js:9
+#: js/tasks.js:24 js/tasks.js:30 js/update_task.js:46
+msgid "No matches found!"
+msgstr ""
+
+#: js/notify.js:32
+msgid "Do not notify anybody"
+msgstr ""
+
+#: js/notify.js:33
+msgid "Notify only to the members specified below"
+msgstr ""
+
+#: js/notify.js:38
+msgid "Select all"
+msgstr ""
+
+#: js/notify.js:39
+msgid "Select none"
+msgstr ""
+
+#: js/report.js:136 templates/report.php:34
+msgid "Kindly select project and report type to generate the report"
+msgstr ""
+
+#: js/report.js:162
+msgid "No tasks available in this project"
+msgstr ""
+
+#: js/report.js:199
+msgid "task(s)"
+msgstr ""
+
+#: js/report.js:203
+msgid "Total number of tasks: "
+msgstr ""
+
+#: js/report.js:218 templates/tasks.php:45
+msgid "Cancelled"
+msgstr ""
+
+#: js/report.js:221 templates/tasks.php:53
+msgid "Completed"
+msgstr ""
+
+#: js/report.js:224 templates/tasks.php:61
+msgid "Held"
+msgstr ""
+
+#: js/report.js:227 templates/tasks.php:37
+msgid "In Progress"
+msgstr ""
+
+#: js/report.js:230 templates/tasks.php:69
+msgid "Unassigned"
+msgstr ""
+
+#: js/report.js:233 templates/tasks.php:77
+msgid "Verified"
+msgstr ""
+
+#: js/report.js:349
+msgid "Number of verified tasks: "
+msgstr ""
+
+#: js/report.js:349
+msgid "Number of pending tasks: "
+msgstr ""
+
+#: js/report.js:355
+msgid "Progressed"
+msgstr ""
+
+#: js/report.js:355
+msgid "To progress"
+msgstr ""
+
+#: js/report.js:355
+msgid "Crossed deadline"
+msgstr ""
+
+#: js/report.js:429
+msgid ""
+"Number of tasks carried out by each member (working on this project) is "
+"presented below"
+msgstr ""
+
+#: js/skillset.js:41 templates/skillset.php:13
+#: templates/skillset_details.php:25
+msgid "Skill"
+msgstr ""
+
+#: js/skillset.js:45 lib/skillset.php:12
+msgid "Beginner"
+msgstr ""
+
+#: js/skillset.js:46 lib/skillset.php:15
+msgid "Intermediate"
+msgstr ""
+
+#: js/skillset.js:47 lib/skillset.php:18
+msgid "Expert"
+msgstr ""
+
+#: js/skillset.js:57 js/skillset.js:102
+msgid "Add Skill"
+msgstr ""
+
+#: js/tasks.js:50 templates/update_task.php:174
+msgid "Reason"
+msgstr ""
+
+#: js/update_project.js:63
+msgid "You cannot make changes on a completed project"
+msgstr ""
+
+#: js/update_project.js:86
+msgid "Username"
+msgstr ""
+
+#: js/update_project.js:89 templates/project_details.php:108
+msgid "Role"
+msgstr ""
+
+#: js/update_project.js:92
+msgid "Email"
+msgstr ""
+
+#: js/update_project.js:95
+msgid "Mobile"
+msgstr ""
+
+#: js/update_project.js:102 js/update_project.js:149
+#: templates/update_project.php:148
+msgid "Add Member"
+msgstr ""
+
+#: js/update_project.js:173 js/update_project.js:201
+msgid "Another project with this title already exists."
+msgstr ""
+
+#: js/update_project.js:243
+msgid ""
+"Project with pending tasks cannot be completed. See report for more details"
+msgstr ""
+
+#: js/update_task.js:63
+msgid "You cannot make changes on a cancelled task."
+msgstr ""
+
+#: js/update_task.js:64
+msgid "You cannot make changes on a verified task."
+msgstr ""
+
+#: lib/tasks.php:12 templates/update_task.php:115
+msgid "Very High"
+msgstr ""
+
+#: lib/tasks.php:14 templates/update_task.php:116
+msgid "High"
+msgstr ""
+
+#: lib/tasks.php:16 templates/update_task.php:117
+msgid "Normal"
+msgstr ""
+
+#: lib/tasks.php:18 templates/update_task.php:118
+msgid "Low"
+msgstr ""
+
+#: lib/tasks.php:20 templates/update_task.php:119
+msgid "Very Low"
+msgstr ""
+
+#: lib/tasks.php:141 templates/comment.php:123 templates/comment.php:138
+msgid "Cancel"
+msgstr ""
+
+#: lib/tasks.php:144
+msgid "Finish"
+msgstr ""
+
+#: lib/tasks.php:147
+msgid "Hold"
+msgstr ""
+
+#: lib/tasks.php:150
+msgid "Assign"
+msgstr ""
+
+#: lib/tasks.php:153
+msgid "Resume"
+msgstr ""
+
+#: submit_change_project.php:19
+#, php-format
+msgid "Project '%s' has been updated successfully."
+msgstr ""
+
+#: submit_change_project.php:24
+#, php-format
+msgid "Project '%s' cannot be updated. Kindly try after some time."
+msgstr ""
+
+#: submit_change_task.php:19
+#, php-format
+msgid "Task '%s' has been successfully updated."
+msgstr ""
+
+#: submit_change_task.php:24
+#, php-format
+msgid "Task '%s' cannot be updated. Kindly try after some time."
+msgstr ""
+
+#: submit_new_notification.php:16
+#, php-format
+msgid "Notification '%s' has been posted successfully."
+msgstr ""
+
+#: submit_new_project.php:19
+#, php-format
+msgid "Project '%s' has been created successfully."
+msgstr ""
+
+#: submit_new_project.php:24
+#, php-format
+msgid "Project '%s' cannot be created. Kindly try after some time."
+msgstr ""
+
+#: submit_new_task.php:19
+#, php-format
+msgid "Task '%s' has been created successfully."
+msgstr ""
+
+#: submit_new_task.php:26
+#, php-format
+msgid "Task '%s' cannot be created. Kindly try after some time."
+msgstr ""
+
+#: submit_notify.php:15 submit_skillset.php:16 submit_update_project.php:35
+#: submit_update_task.php:45 submit_update_task.php:76
+#: templates/event_edit_form.php:55 templates/event_form.php:46
+msgid "Loading..."
+msgstr ""
+
+#: submit_notify.php:16
+#, php-format
+msgid "Creating notification '%s'. Please be patient."
+msgstr ""
+
+#: submit_skillset.php:17
+msgid "Adding skills. Please be patient."
+msgstr ""
+
+#: submit_update_project.php:36
+#, php-format
+msgid "Updating project '%s'. Please be patient."
+msgstr ""
+
+#: templates/comment.php:47 templates/comment.php:53
+msgid "View Details"
+msgstr ""
+
+#: templates/comment.php:104
+msgid "Write new comment: "
+msgstr ""
+
+#: templates/comment.php:108
+msgid "Submit"
+msgstr ""
+
+#: templates/comment.php:117
+msgid "Updated post title"
+msgstr ""
+
+#: templates/comment.php:119
+msgid "Updated post content"
+msgstr ""
+
+#: templates/comment.php:122 templates/comment.php:137
+#: templates/skillset.php:35 update_project.php:23 update_task.php:28
+msgid "Update"
+msgstr ""
+
+#: templates/comment.php:134
+msgid "Updated comment"
+msgstr ""
+
+#: templates/dashboard.php:7 templates/tabs.php:8
+msgid "Dashboard"
+msgstr ""
+
+#: templates/dashboard.php:16 templates/tasks.php:84
+msgid "Filter by project:"
+msgstr ""
+
+#: templates/dashboard.php:18 templates/projects.php:25 templates/tasks.php:28
+#: templates/tasks.php:86
+msgid "ALL"
+msgstr ""
+
+#: templates/dashboard.php:34
+msgid "Sorry, no post is available to display."
+msgstr ""
+
+#: templates/event_edit_form.php:55 templates/event_form.php:46
+#, php-format
+msgid "Creating task '%s'. Please be patient."
+msgstr ""
+
+#: templates/event_edit_form.php:60 templates/event_form.php:50
+msgid "Access Denied"
+msgstr ""
+
+#: templates/event_edit_form.php:60 templates/event_form.php:50
+#, php-format
+msgid "Task '%s' cannot be created."
+msgstr ""
+
+#: templates/notify.php:7 templates/notify.php:77 templates/tabs.php:72
+msgid "Notify"
+msgstr ""
+
+#: templates/notify.php:15
+msgid ""
+"Sorry, you are not into any project yet. You can notify only after joining a "
+"project."
+msgstr ""
+
+#: templates/notify.php:26 templates/task_details.php:13
+#: templates/update_task.php:35
+msgid "Project"
+msgstr ""
+
+#: templates/notify.php:49
+msgid "Notification Subject"
+msgstr ""
+
+#: templates/notify.php:63
+msgid "Notification Message"
+msgstr ""
+
+#: templates/notify.php:86
+msgid "Notify all"
+msgstr ""
+
+#: templates/notify.php:101
+msgid "Send"
+msgstr ""
+
+#: templates/project_details.php:7
+msgid "Project Details"
+msgstr ""
+
+#: templates/project_details.php:13 templates/update_project.php:31
+msgid "Project Title"
+msgstr ""
+
+#: templates/project_details.php:29 templates/update_project.php:46
+msgid "Description"
+msgstr ""
+
+#: templates/project_details.php:43 templates/task_details.php:70
+#: templates/update_project.php:77 templates/update_task.php:193
+msgid "Deadline"
+msgstr ""
+
+#: templates/project_details.php:59 templates/task_details.php:109
+#: templates/update_task.php:126
+msgid "Status"
+msgstr ""
+
+#: templates/project_details.php:70
+#, php-format
+msgid "Completed on %s"
+msgstr ""
+
+#: templates/project_details.php:78
+msgid "In progress"
+msgstr ""
+
+#: templates/project_details.php:86 templates/update_project.php:100
+msgid "Members"
+msgstr ""
+
+#: templates/project_details.php:109
+msgid "Member(s)"
+msgstr ""
+
+#: templates/projects.php:7 templates/tabs.php:41
+msgid "Projects"
+msgstr ""
+
+#: templates/projects.php:13
+msgid "Sorry, no project is available yet to display."
+msgstr ""
+
+#: templates/projects.php:23
+msgid "Search project:"
+msgstr ""
+
+#: templates/report.php:6
+msgid "Project Report"
+msgstr ""
+
+#: templates/report.php:16
+msgid "Select Project"
+msgstr ""
+
+#: templates/report.php:26
+msgid "Select Report Type"
+msgstr ""
+
+#: templates/report.php:27
+msgid "Contribution Report"
+msgstr ""
+
+#: templates/report.php:28
+msgid "Project Timeline"
+msgstr ""
+
+#: templates/report.php:29
+msgid "Task Status Report"
+msgstr ""
+
+#: templates/skillset.php:7 templates/tabs.php:80
+msgid "My Skillset"
+msgstr ""
+
+#: templates/skillset.php:14 templates/skillset_details.php:29
+msgid "Expertise"
+msgstr ""
+
+#: templates/skillset.php:15 templates/skillset_details.php:33
+msgid "Experience"
+msgstr ""
+
+#: templates/skillset.php:15
+msgid "(in years)"
+msgstr ""
+
+#: templates/skillset.php:29
+msgid "Add a skill"
+msgstr ""
+
+#: templates/skillset_details.php:7
+msgid "Skillset"
+msgstr ""
+
+#: templates/skillset_details.php:13
+msgid "Member"
+msgstr ""
+
+#: templates/skillset_details.php:17
+#, php-format
+msgid "Number of tasks in project<br />'%s'"
+msgstr ""
+
+#: templates/skillset_details.php:21
+msgid "Number of tasks in all projects"
+msgstr ""
+
+#: templates/skillset_details.php:48
+msgid "Skills yet to be added by member"
+msgstr ""
+
+#: templates/skillset_details.php:56
+msgid "year(s)"
+msgstr ""
+
+#: templates/tabs.php:21 update_project.php:30
+msgid "Create Project"
+msgstr ""
+
+#: templates/tabs.php:29 update_task.php:35
+msgid "Create Task"
+msgstr ""
+
+#: templates/tabs.php:49 templates/tasks.php:7
+msgid "Tasks"
+msgstr ""
+
+#: templates/tabs.php:61
+msgid "Report"
+msgstr ""
+
+#: templates/task_details.php:7
+msgid "Task details"
+msgstr ""
+
+#: templates/task_details.php:28 templates/update_task.php:78
+msgid "Task Title"
+msgstr ""
+
+#: templates/task_details.php:42 templates/update_task.php:92
+msgid "Task Description"
+msgstr ""
+
+#: templates/task_details.php:56 templates/update_task.php:106
+msgid "Priority"
+msgstr ""
+
+#: templates/task_details.php:84
+msgid "Task Status"
+msgstr ""
+
+#: templates/task_details.php:103
+msgid "Task History:"
+msgstr ""
+
+#: templates/task_details.php:110
+msgid "Time"
+msgstr ""
+
+#: templates/task_details.php:111
+msgid "Comment"
+msgstr ""
+
+#: templates/tasks.php:18
+msgid "Filter by status:"
+msgstr ""
+
+#: templates/tasks.php:100
+msgid "Show tasks:&nbsp;"
+msgstr ""
+
+#: templates/tasks.php:104
+msgid "created by me"
+msgstr ""
+
+#: templates/tasks.php:110
+msgid "assigned to me"
+msgstr ""
+
+#: templates/tasks.php:124
+msgid "Sorry, no task is available to display."
+msgstr ""
+
+#: templates/tasks.php:201
+msgid "Kindly give your reason in passive voice"
+msgstr ""
+
+#: templates/update_project.php:62
+msgid "Creator"
+msgstr ""
+
+#: templates/update_project.php:90
+msgid "Completed?"
+msgstr ""
+
+#: templates/update_project.php:144
+msgid ""
+"(If user does not exist in owncloud, user will be automatically created with "
+"password being the same as username in lower case)"
+msgstr ""
+
+#: templates/update_project.php:154
+msgid "Inform member(s) via mail"
+msgstr ""
+
+#: templates/update_task.php:15
+msgid ""
+"Sorry, you are not into any project yet. You can create tasks only after "
+"joining a project."
+msgstr ""
+
+#: templates/update_task.php:165
+msgid "View availablility & skillset"
+msgstr ""
+
+#: templates/update_task.php:167
+msgid "Inform member via mail"
+msgstr ""
+
+#: update_project.php:22
+msgid "Update Project"
+msgstr ""
+
+#: update_project.php:31 update_task.php:36
+msgid "Create"
+msgstr ""
+
+#: update_task.php:27
+msgid "Update Task"
+msgstr ""

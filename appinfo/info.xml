@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<info>
+	<id>collaboration</id>
+	<name>Collaboration</name>
+	<description>App used for project collaboration</description>
+	<version>1.0</version>
+	<licence>APGL</licence>
+	<author>Dr.J.Akilandeswari, R.Ramki, R.Sasidharan and P.Suresh</author>
+	<require>5</require>
+</info>

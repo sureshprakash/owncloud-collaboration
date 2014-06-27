@@ -1,0 +1,41 @@
+#title
+{	
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#report_content
+{
+	text-align: center;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 70px;
+}
+
+#legend_table
+{
+	border: solid black 1px;
+}
+
+#legend_table td
+{
+	padding: 8px;
+}
+
+#legend
+{
+	float: right;
+}
+
+#project_list_container
+{
+	position: fixed;
+}
+
+#message
+{
+	margin-top: 50px;
+}

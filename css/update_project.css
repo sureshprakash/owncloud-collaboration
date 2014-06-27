@@ -1,0 +1,47 @@
+#title
+{	
+	text-align: center; 
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+textarea[name='description']
+{
+	max-width: 950px;
+	max-height: 500px;
+	width: 750px;
+	height: 150px;
+}
+
+input[name='title']
+{
+	width: 400px;
+}
+
+.error
+{
+	color: red;
+}
+
+.required
+{
+	color: red;
+	font-size: 16px;
+}
+
+#submit-form
+{
+	text-align: center;
+}
+
+.old_mem_role
+{
+	font-weight: bold;
+}
+
+.delete_old_member
+{
+	width: 11px;
+	height: 11px;
+}
