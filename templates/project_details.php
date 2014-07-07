@@ -128,7 +128,7 @@
 					<th><?php p($l->t('Role')); ?></th>
 					<th><?php p($l->t('Member(s)')); ?></th>
 				</tr>
-		<?
+		<?php
 			}
 			
 			foreach($member_role as $role => $members)
