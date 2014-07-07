@@ -19,9 +19,7 @@
  *
  */
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<script type="text/javascript"> window.location.href='./collaboration/dashboard'; </script>
-</head>
-</html>
+<?php
+    header("Location: ./collaboration/dashboard");
+    exit;
+?>
