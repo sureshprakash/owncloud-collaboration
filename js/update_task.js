@@ -44,8 +44,7 @@ $(document).ready(function()
 	
 	if($('input[name="tid"]').length == 0)
 	{
-		$("#create_task img").css({opacity: 1.0});
-		$("#create_task a").css({color: 'black', backgroundColor: '#E9E3E3'});
+		$("#create_task").css({color: 'black', backgroundColor: '#E9E3E3'});
 		
 		$("#project").chosen(
 		{

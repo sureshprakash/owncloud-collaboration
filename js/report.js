@@ -6,8 +6,7 @@
 
 $(document).ready(function()
 {
-	$("#report img").css({opacity: 1.0});
-	$("#report a").css({color: 'black', backgroundColor: '#E9E3E3'});
+	$("#report").css({color: 'black', backgroundColor: '#E9E3E3'});
 	$("#collaboration_content").css({marginLeft: $("#tabs_collaboration").outerWidth(true), padding: '10px'});
 	
 	$("#projects_list").chosen(
