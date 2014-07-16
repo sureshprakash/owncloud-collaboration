@@ -26,7 +26,7 @@
 		<input type="hidden" name="task" value="<?php p($_['task']); ?>" />
 		<input type="hidden" name="title" value="<?php p($_POST['title']); ?>" />
 	</form>
-<?	
+<?php	
 	if(strcmp($_['permission_granted'], 'true') == 0)
 	{
 		$event_id = OC_Collaboration_Calendar::getEventId($_POST['tid']);
