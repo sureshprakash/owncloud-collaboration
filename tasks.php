@@ -40,7 +40,7 @@ $args = array(
 if(isset($_GET['project']) && $_GET['project'] != 'ALL')
 {
 	if(!OC_Collaboration_Project::isMemberWorkingOnProjectByTitle(OC_User::getUser(), $_GET['project']))
-	{	
+	{
 		header('Location: ' . \OCP\Util::linkToRoute('collaboration_route', array('rel_path'=>'dashboard')));
 		throw new Exception(OC_User::getUser() . ' is trying to access project ' . $_GET['project']);
 		exit();
