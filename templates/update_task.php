@@ -22,10 +22,7 @@
 	print_unescaped($this->inc('tabs'));
 ?>
 <div id="app-content">
-
-	<h1 id="title">
-		<?php p($_['title']); ?>
-	</h1>
+  <h1 id="title"><?php p($_['title']); ?></h1>
 
 	<?php
 		if(!isset($_['tid']) && (!isset($_['projects']) || count($_['projects']) == 0))
