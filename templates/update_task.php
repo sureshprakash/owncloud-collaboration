@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * ownCloud - collaboration plugin
  *
@@ -21,7 +21,7 @@
 
 	print_unescaped($this->inc('tabs'));
 ?>
-<div id="collaboration_content" >
+<div id="app-content">
 
 	<h1 id="title">
 		<?php p($_['title']); ?>
@@ -34,7 +34,7 @@
 			<p>
 				<?php p($l->t('Sorry, you are not into any project yet. You can create tasks only after joining a project.')); ?>
 			</p>
-	<?php		
+	<?php
 		}
 		else
 		{
@@ -54,9 +54,9 @@
 					<td>
 						<?php p($l->t('Project')); ?>
 					</td>
-			
+
 					<td>
-						: 
+						:
 						<?php
 							if(!isset($_['tid']))
 							{
@@ -66,19 +66,19 @@
 							}
 						?>
 					</td>
-			
+
 					<td>
 						<?php
 							if(!isset($_['tid']))
 							{
 						?>
 							<select name="pid" id="project" class="chzen-select" required>
-						<?php	
+						<?php
 										foreach($_['projects'] as $pid => $ptitle)
 										{
 											print_unescaped('<option value="' . $pid . '" >' . $ptitle . '</option>');
 										}
-						?>	
+						?>
 							</select>
 						<?php
 							}
@@ -90,7 +90,7 @@
 						?>
 						<span id="load_members" > </span>
 					</td>
-		
+
 				</tr>
 
 				<tr>
@@ -111,7 +111,7 @@
 					<td>
 						<?php p($l->t('Task Description')); ?>
 					</td>
-			
+
 					<td>
 						: <span class="required">*</span>
 					</td>
@@ -120,7 +120,7 @@
 						<textarea maxlength="3000" name="description" required ><?php if(isset($_['tid'])) p($_['task_details']['description']); ?></textarea>
 					</td>
 				</tr>
-				
+
 				<tr>
 					<td>
 						<?php p($l->t('Priority')); ?>
@@ -129,7 +129,7 @@
 					<td>
 						: <span class="required">*</span>
 					</td>
-	
+
 					<td>
 						<select name="priority" required >
 							<option value="1" <?php if(isset($_['tid']) && $_['task_details']['priority'] == 1) print_unescaped('selected'); ?> ><?php p($l->t('Very High')); ?></option>
@@ -149,13 +149,13 @@
 					<td>
 						:
 					</td>
-		
+
 					<td>
 						<?php
 							$ev_stat = array();
-							
+
 							$status = NULL;
-							
+
 							if(!isset($_['tid']))
 							{
 								$ev_stat = OC_Collaboration_Task::getEventStatus('Created', 'Creator');
@@ -166,16 +166,16 @@
 								$ev_stat = OC_Collaboration_Task::getEventStatus($_['task_details']['status'], 'Creator');
 								$status = $_['task_details']['status'];
 								$member = $_['task_details']['member'];
-								
+
 								print_unescaped('<span id="task_status">' . OC_Collaboration_Task::getStatusInFormat($status, $member, OC_User::getUser()) . '</span><br />');
 							}
-							
+
 							$i = 0;
 							foreach($ev_stat as $event => $status)
 							{
 								print_unescaped('<input class="event" id="event_' . $i . '" value="' . $status . '" name="status" type="radio" data-next-status="' . $status . '" />');
 								print_unescaped('<label for="event_' . $i . '" >' . OC_Collaboration_Task::translateEvent($event) . '</label>');
-								
+
 								switch($event)
 								{
 									case 'Assign':
@@ -185,27 +185,27 @@
 															<a id="skillset_link" href="" target="_blank" >' . $l->t('View availablility & skillset') . '</a><br />
 															<input type="checkbox" id="send_mail" name="send_mail" />
 															<label for="send_mail" >' . $l->t('Inform member via mail') . '</label></span>');
-														
+
 										break;
-										
+
 									case 'Cancel':
 									case 'Reject':
 										print_unescaped('<span class="event_info" id="event_info_' . $i . '" >
 															<input type="text" name="reason" placeholder="' . $l->t('Reason') . '" />
 														</span>');
-														
+
 										break;
-									
+
 								}
-								
+
 								print_unescaped('<br />');
-								
+
 								$i++;
 							}
 						?>
-					
-					</td>					
-					
+
+					</td>
+
 				</tr>
 
 				<tr>
@@ -216,18 +216,18 @@
 					<td>
 						: <span class="required">*</span>
 					</td>
-	
+
 					<td>
 						<input type="text" id="deadline_time" name="deadline_time" placeholder="MM/DD/YYYY HH:MM" autocomplete="off" required <?php if(isset($_['tid'])) print_unescaped('value="' . OC_Collaboration_Time::convertDBTimeToUITimeShort($_['task_details']['ending_time']) . '"'); ?> />
 					</td>
 				</tr>
 			</table>
-	
+
 			<div id="submit-form" >
 				<input type="submit" value="<?php p($_['submit_btn_name']); ?>" />
 			</div>
 		</form>
 	<?php
 		}
-	?>	
+	?>
 </div>

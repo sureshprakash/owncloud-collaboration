@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * ownCloud - collaboration plugin
  *
@@ -22,11 +22,11 @@
 	print_unescaped($this->inc('tabs'));
 ?>
 
-<div id="collaboration_content" >
+<div id="app-content">
 	<h1 id="title">
 		<?php p($l->t('My Skillset')); ?>
 	</h1>
-	
+
 	<form action="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'submit_skillset'))); ?>" method="post" >
 	<table id="skills" >
 		<tr>
@@ -35,10 +35,10 @@
 			<th><?php print_unescaped($l->t('Experience') . '<br />' . $l->t('(in years)')); ?></th>
 			<th></th>
 		</tr>
-		
+
 		<?php
 			$skills = OC_Collaboration_Skillset::readSkills(OC_User::getUser());
-			
+
 			foreach($skills as $skill)
 			{
 				print_unescaped('<tr><td>' . $skill['skill'] . '</td><td>' . OC_Collaboration_Skillset::getExpertiseString($skill['expertise']) . '</td><td>' . $skill['experience'] . '</td><td><img class="old_skill" src="' . OCP\Util::imagePath('core', 'actions/delete.png') . '" width="15px" height="15px" /></td></tr>');
@@ -50,7 +50,7 @@
 			</td>
 		</tr>
 	</table>
-	
+
 	<div id="submit_btn" >
 		<input type="submit" value="<?php p($l->t('Update')); ?>" />
 	</div>

@@ -19,90 +19,58 @@
  *
  */
 ?>
-<nav id="tabs_collaboration">
-	<div>
-		<ul>
+<nav id="app-navigation">
+		<ul id="navigation-list">
 			<li id="dashboard" class="tab">
 				<a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'dashboard')));?>">
-					<img src="<?php print_unescaped(OCP\Util::imagePath('collaboration', 'dashboard.png')); ?>" height="35px" width="35px" />
-					<br />
 					<?php p($l->t('Dashboard')) ?>
 				</a>
 			</li>
 
-			<?php
-				if(OC_Collaboration_Project::isAdmin())
-				{
-			?>
-			
-			<li id="create_project" class="tab">
-				<a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'update_project')));?>">
-					<img src="<?php print_unescaped(OCP\Util::imagePath('collaboration', 'create_project.png')); ?>" height="35px" width="35px" />
-					<br />
-					<?php p($l->t('Create Project')) ?>
-				</a>
-			</li>
-			
-			<li id="create_task" class="tab">
-				<a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'update_task' )));?>">
-					<img src="<?php print_unescaped(OCP\Util::imagePath('collaboration', 'create_task.png')); ?>" height="35px" width="35px" />
-					<br />
-					<?php p($l->t('Create Task')) ?>
-				</a>
-			</li>
-			
-			<?php
-				}
-			?>
-		
+			<?php if(OC_Collaboration_Project::isAdmin()) { ?>
+			  <li id="create_project" class="tab">
+				  <a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'update_project')));?>">
+					  <?php p($l->t('Create Project')) ?>
+				  </a>
+			  </li>
+
+			  <li id="create_task" class="tab">
+				  <a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'update_task' )));?>">
+					  <?php p($l->t('Create Task')) ?>
+			  	</a>
+			  </li>
+			<?php 	} //-- end admin	?>
+
 			<li id="projects" class="tab">
 				<a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'projects' )));?>">
-					<img src="<?php print_unescaped(OCP\Util::imagePath('collaboration', 'projects.png')); ?>" height="35px" width="35px" />
-					<br />
 					<?php p($l->t('Projects')) ?>
 				</a>
 			</li>
 
 			<li id="tasks" class="tab">
 				<a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'tasks' )));?>">
-					<img src="<?php print_unescaped(OCP\Util::imagePath('collaboration', 'tasks.png')); ?>" height="35px" width="35px" />
-					<br />
 					<?php p($l->t('Tasks')) ?>
 				</a>
 			</li>
-		
-			<?php
-				if(OC_Collaboration_Project::isAdmin())
-				{
-			?>
-			<li id="report" class="tab">
-				<a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'report' )));?>">
-					<img src="<?php print_unescaped(OCP\Util::imagePath('collaboration', 'report.png')); ?>" height="35px" width="35px" />
-					<br />
-					<?php p($l->t('Report')) ?>
-				</a>
-			</li>
-			<?php
-				}
-			?>
+
+			<?php if(OC_Collaboration_Project::isAdmin()){ ?>
+			  <li id="report" class="tab">
+				  <a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'report' )));?>">
+					  <?php p($l->t('Report')) ?>
+				  </a>
+			  </li>
+			<?php 	} //-- end admin	?>
 
 			<li id="notify" class="tab">
 				<a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'notify' )));?>">
-					<img src="<?php print_unescaped(OCP\Util::imagePath('collaboration', 'notify.png')); ?>" height="35px" width="35px" />
-					<br />
 					<?php p($l->t('Notify')) ?>
 				</a>
 			</li>
-			
+
 			<li id="skill_set" class="tab">
 				<a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'skillset')));?>">
-					<img src="<?php print_unescaped(OCP\Util::imagePath('collaboration', 'skill_set.png')); ?>" height="35px" width="35px" />
-					<br />
 					<?php p($l->t('My Skillset')) ?>
 				</a>
 			</li>
-
-
 		</ul>
-	</div>
 </nav>

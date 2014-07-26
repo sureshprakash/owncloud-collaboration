@@ -21,7 +21,7 @@
 
 	print_unescaped($this->inc('tabs'));
 ?>
-<div id="collaboration_content" >
+<div id="app-content">
 	<h1 id="title">
 		<?php p($l->t('Project Report')); ?>
 	</h1>
@@ -30,7 +30,7 @@
 		<?php
 			$projects = OC_Collaboration_Project::getProjects(OC_User::getUser());
 		?>
-		
+
 		<form id="chooser_form" action="" >
 			<select id="projects_list" name="project" class="chzen-select" >
 				<option value="" ><?php p($l->t('Select Project')); ?></option>
@@ -41,7 +41,7 @@
 					}
 				?>
 			</select>
-			
+
 			<select id="report_type" name="report_type" >
 				<option value="" ><?php p($l->t('Select Report Type')); ?></option>
 				<option value="contribution" ><?php p($l->t('Contribution Report')); ?></option>
@@ -50,19 +50,19 @@
 			</select>
 		</form>
 	</div>
-		
+
 	<div id="message" ><?php p($l->t('Kindly select project and report type to generate the report')); ?></div>
-	
+
 	<div id="bargraph" >
 	</div>
-		
+
 	<div id="report_content" >
 		<span id="diagram" >
 			<canvas id="canvas" width="350" height="350" >
-				
+
 			</canvas>
 		</span>
-		
+
 		<span id="legend" >
 		</span>
 	</div>

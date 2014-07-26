@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * ownCloud - collaboration plugin
  *
@@ -22,7 +22,7 @@
     print_unescaped($this->inc('tabs'));
 ?>
 
-<div id="collaboration_content">
+<div id="app-content">
 	<h1 id="title" >
 		<?php p($l->t('Skillset')); ?>
 	</h1>
@@ -32,27 +32,27 @@
 			<th>
 				<?php p($l->t('Member')); ?>
 			</th>
-		
+
 			<th>
 				<?php print_unescaped($l->t('Number of tasks in project<br />\'%s\'', array(OC_Collaboration_Project::getProjectTitle($_['project'])))); ?>
 			</th>
-			
+
 			<th>
 				<?php p($l->t('Number of tasks in all projects')); ?>
 			</th>
-			
+
 			<th>
 				<?php p($l->t('Skill')); ?>
 			</th>
-		
+
 			<th>
 				<?php p($l->t('Expertise')); ?>
 			</th>
-		
+
 			<th>
 				<?php p($l->t('Experience')); ?>
 			</th>
-		
+
 		</tr>
 
 		<?php
@@ -62,7 +62,7 @@
 				{
 					$skills = OC_Collaboration_Skillset::readSkills($member);
 					$skl_cnt = count($skills);
-				
+
 					if($skl_cnt == 0)
 					{
 						print_unescaped('<tr><td>' . $member . '</td><td>' . $cnt['proj_cnt'] . '</td><td>' . $cnt['tot_cnt'] . '</td><td colspan="3" >' . $l->t('Skills yet to be added by member') . '</td></tr>');
@@ -70,16 +70,16 @@
 					else
 					{
 						print_unescaped('<tr><td rowspan="' . $skl_cnt . '" >' . $member . '</td><td rowspan="' . $skl_cnt . '" >' . $cnt['proj_cnt'] . '</td><td rowspan="' . $skl_cnt . '" >' . $cnt['tot_cnt'] . '</td>');
-					
+
 						foreach($skills as $skill)
 						{
 							print_unescaped('<td>' . $skill['skill'] . '</td><td>' . OC_Collaboration_Skillset::getExpertiseString($skill['expertise']) . '</td><td>' . $skill['experience'] . ' ' . $l->t('year(s)') . '</td></tr><tr>');
 						}
-					
+
 						print_unescaped('</tr>');
 					}
 				}
 			}
-		?>	
+		?>
 	</table>
-</div>		
+</div>

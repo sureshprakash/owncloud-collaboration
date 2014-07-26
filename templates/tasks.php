@@ -21,7 +21,7 @@
 
     print_unescaped($this->inc('tabs'));
 ?>
-<div id="collaboration_content">
+<div id="app-content">
 	<h1 id="title" ><?php p($l->t('Tasks')); ?></h1>
 	<div id="tasks_list" >
 		<?php

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * ownCloud - collaboration plugin
  *
@@ -22,10 +22,8 @@
     print_unescaped($this->inc('tabs'));
 ?>
 
-<div id="collaboration_content">
-	<h1 id="title" >
-		<?php p($l->t('Projects')); ?>
-	</h1>
+<div id="app-content">
+	<h1 id="title" ><?php p($l->t('Projects')); ?></h1>
 
 	<?php
 		if(!isset($_['projects']) || count($_['projects']) === 0 || count($_['projects'][0]) === 0)
@@ -52,24 +50,24 @@
 			</select>
 		</form>
 	</span>
-			
+
 	<div id="projects_list" >
 	<?php
 			foreach($_['projects'] as $each)
 			{
 	?>
 				<div class="unit">
-					<div class="project_title">		
+					<div class="project_title">
 							<?php p($each['title']); ?>
 					</div>
 
 					<div class="contents">
-						<div class="description" >	
+						<div class="description" >
 							<?php p($each['description']); ?>
 						</div>
-						
+
 						<br />
-						
+
 						<form class="view_details" action="<?php p(\OCP\Util::linkToRoute('collaboration_route', array('rel_path'=>'project_details'))); ?>" method="post" >
 								<input type="hidden" name="pid" value="<?php p($each['pid']); ?>" />
 								<input type="submit" value="<?php p($l->t('View details'));	?>" />
@@ -89,20 +87,20 @@
 							}
 						?>
 					</div>
-					
+
 					<div class="details">
 
 						<div class="creation_details">
 							<?php
-								$datetime = explode(' ', $each['starting_date']); 
-								p($l->t('On %s at %s', array($l->l('date', $datetime[0]), $l->l('time', $datetime[1])))); 
+								$datetime = explode(' ', $each['starting_date']);
+								p($l->t('On %s at %s', array($l->l('date', $datetime[0]), $l->l('time', $datetime[1]))));
 							?>
 						</div>
-						
+
 						<div class="deadline_details">
 							<?php
-								$datetime = explode(' ', $each['ending_date']); 
-								p($l->t('On %s at %s', array($l->l('date', $datetime[0]), $l->l('time', $datetime[1])))); 
+								$datetime = explode(' ', $each['ending_date']);
+								p($l->t('On %s at %s', array($l->l('date', $datetime[0]), $l->l('time', $datetime[1]))));
 							?>
 						</div>
 					</div>
@@ -111,7 +109,7 @@
 			}
 	?>
 			</div>
-			
+
 	<?php
 		}
 	?>
