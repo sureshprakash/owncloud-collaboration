@@ -1,9 +1,16 @@
 #title
-{	
-	text-align: center; 
+{
+	text-align: center;
 	font-size: 20px;
 	text-transform: uppercase;
 	font-weight: bold;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+#posts,
+#content-header
+{
+	clear:both;
 }
 
 #project_list_container
@@ -11,24 +18,28 @@
 	float: right;
 }
 
+
 .post_title
-{	
+{
 	padding: 5px;
 	background-color: #62749B;
 	color: white;
-	text-align: center; 
+	text-align: center;
 	font-size: 20px;
 	margin:0px 0px 0px 0px;
 	border-radius: 15px 15px 0px 0px;
 }
 
+#filter_form{
+	margin-right:15px;
+}
+
 .contents
-{	
+{
 	height: 50%;
 	font-size: 14px;
 	padding: 10px;
 	text-align: justify;
-	text-indent: 50px;
 }
 
 .btn_comment
@@ -47,9 +58,18 @@
 	width: 100%;
 	text-align: right;
 }
-
+/*
 .creation_details
-{	
+{
+	float:left;
+	width: 100%;
+	background-color: inherit;
+	text-align: left;
+	padding:5px 0 5px 0;
+}
+*/
+.creation_details
+{
 	float:right;
 	width: 50%;
 	background-color: inherit;
@@ -72,4 +92,15 @@
 	height: 100%;
 	margin: 4% 2% 4% 2%;
 	border-radius: 15px 15px 0px 0px;
+}
+
+.clear-both
+{
+	clear:both;
+	padding:5px 0 5px 0;
+}
+
+.clear-both-np
+{
+	clear:both;
 }

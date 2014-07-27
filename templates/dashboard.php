@@ -18,42 +18,39 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+$projects = OC_Collaboration_Project::getProjects(OC_User::getUser());
 
-    print_unescaped($this->inc('tabs'));
+
+print_unescaped($this->inc('tabs'));
 ?>
 
 <div id="app-content">
-	<h1 id="title" ><?php p($l->t('Dashboard')); ?></h1>
-
-		<div id="project_list_container" >
-			<?php
-				$projects = OC_Collaboration_Project::getProjects(OC_User::getUser());
-			?>
-
-			<form id="filter_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get" >
-				<?php p($l->t('Filter by project:')); ?>
-				<select id="projects_list" name="project" class="chzen-select" >
-					<option value="ALL" <?php if(!isset($_['project']) || $_['project'] == 'ALL') { print_unescaped('selected="selected"'); } ?> ><?php p($l->t('ALL')); ?></option>
-					<?php
-						foreach($projects as $pid => $ptitle)
-						{
-							print_unescaped('<option value="' . $ptitle . '" ' . (isset($_['project']) && (strtolower($_['project']) == strtolower($ptitle))? 'selected="selected"': '' ) . ' >' . $ptitle . '</option>');
-						}
-					?>
-				</select>
-			</form>
-		</div>
-
-		<div id="posts" >
+	<div id="content-header" >
+    <h1 id="title" ><?php p($l->t('Dashboard')); ?></h1>
+      <div class='clear-both'>
+		    <div id="project_list_container" >
+			   <form id="filter_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get" >
+				   <select id="projects_list" name="project" class="chzen-select" >
+					 <option value="ALL" <?php if(!isset($_['project']) || $_['project'] == 'ALL') { print_unescaped('selected="selected"'); } ?> ><?php p($l->t('Filter By Project')); ?></option>
+					 <?php
+					  	foreach($projects as $pid => $ptitle) {
+					  	  print_unescaped('<option value="' . $ptitle . '" ' . (isset($_['project']) && (strtolower($_['project']) == strtolower($ptitle))? 'selected="selected"': '' ) . ' >' . $ptitle . '</option>');
+						  }
+					 ?>
+			     </select>
+		  	 </form>
+       </div>
+		 </div>
+   </div>
+	 <div id="posts" >
    	<?php
       if(!isset($_['posts']) || count($_['posts']) === 0 || count($_['posts'][0]) === 0) {
-		  	print_unescaped('<div style="clear: both" >');
+		  	print_unescaped('<div class="clear-both" >');
 		  	p($l->t('Sorry, no post is available to display.'));
 		  	print_unescaped('</div>');
 	  	} else {
 
 			foreach($_['posts'] as $each){ ?>
-
 			  <div class="unit">
 				  <div class="post_title">
 					  	<?php p($each['title']); ?>
@@ -66,22 +63,23 @@
 							  </button>
 					  	</div>
 			  	</div>
+          <div class='clear-both-np'>
+			  	  <div class="details">
+				  	 <div class="proj_title">
+					  	 <?php
+                if(isset($each['proj_title']) && !is_null($each['proj_title'])) {
+								 p($l->t('Project: %s', array($each['proj_title'])));
+							 }
+						   ?>
+					    </div>
 
-			  	<div class="details">
-				  	<div class="proj_title">
-					  	<?php
-              if(isset($each['proj_title']) && !is_null($each['proj_title'])) {
-								p($l->t('Project: %s', array($each['proj_title'])));
-							}
-						  ?>
-					  </div>
-
-					  <div class="creation_details">
-						 <?php
-						  	$datetime = explode(' ', $each['time']);
-							  p($l->t('On %s at %s by %s', array($l->l('date', $datetime[0]), $l->l('time', $datetime[1]), $each['creator'])));
-						  ?>
-					  </div>
+					    <div class="creation_details">
+						    <?php
+						  	  $datetime = explode(' ', $each['time']);
+							    p($l->t('On %s at %s by %s', array($l->l('date', $datetime[0]), $l->l('time', $datetime[1]), $each['creator'])));
+						    ?>
+					    </div>
+            </div>
 				  </div>
 			   </div>
 	    <?php
