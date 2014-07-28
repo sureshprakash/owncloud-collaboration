@@ -24,9 +24,12 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
+
 OCP\Util::addScript('collaboration', 'tasks');
 
+
 OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'tasks');
 
 $tpl = new OCP\Template("collaboration", "tasks", "user");

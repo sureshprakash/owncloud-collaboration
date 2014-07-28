@@ -24,10 +24,14 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
-OCP\Util::addStyle('collaboration', 'tabs');
-OCP\Util::addStyle('collaboration', 'display_message');
 
 OCP\Util::addScript('collaboration', 'display_message');
+
+
+OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'content_header');
+OCP\Util::addStyle('collaboration', 'display_message');
+
 
 $l = OC_L10N::get('collaboration');
 
@@ -40,12 +44,12 @@ foreach($_POST as $key => $value)
 	if(strpos($key, 'mem_name') === 0)
 	{
 		$id = substr($key, 8);
-		
+
 		$details[$i]['member'] = $value;
 		$details[$i]['role'] = $_POST['mem_role' . $id];
 		$details[$i]['email'] = $_POST['mem_email' . $id];
 		$details[$i]['mobile'] = $_POST['mem_mobile' . $id];
-		
+
 		$i++;
 	}
 }

@@ -24,12 +24,15 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
+
 OCP\Util::addScript('collaboration', 'notify');
 OCP\Util::addScript('collaboration/3rdparty', 'multiselect');
 OCP\Util::addScript('collaboration/3rdparty', 'multiselect_filter');
 
+
 OCP\Util::addStyle('collaboration', 'tabs');
 OCP\Util::addStyle('collaboration', 'notify');
+OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration/3rdparty', 'multiselect');
 OCP\Util::addStyle('collaboration/3rdparty', 'multiselect_filter');
 

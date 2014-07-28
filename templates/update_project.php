@@ -49,12 +49,8 @@
 			<tr>
 				<td>
 					<?php p($l->t('Project Title')); ?>
+					<span class="required">*</span>
 				</td>
-
-				<td>
-					: <span class="required">*</span>
-				</td>
-
 				<td>
 					<input type="text" name="title" id="project_title" autocomplete="off" pattern="[a-zA-Z]([a-zA-Z0-9]\s?(\-\s)?){2,98}[a-zA-Z0-9]" title="Title can contain alphabets, numbers, spaces and hyphens with 4 to 100 characters. First character should be an alphabet and last one can be an alphabet or a numeral." <?php if($pid != -1) print_unescaped('value="'.$_['project_details']['title'].'"'); ?> required autofocus/>
 					<span id="error_msg" class="error" ></span>

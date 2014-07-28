@@ -24,22 +24,25 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
-OCP\Util::addStyle('collaboration', 'tabs');
 
 OCP\Util::addScript('collaboration', 'display_message');
 OCP\Util::addScript('collaboration', 'create_event');
+
+
+OCP\Util::addStyle('collaboration', 'content_header');
+OCP\Util::addStyle('collaboration', 'tabs');
 
 $l = OC_L10N::get('collaboration');
 
 $eve = new OCP\Template('collaboration', 'event_form', 'user');
 
 if(!OC_Collaboration_Project::isMemberWorkingOnProject(OC_User::getUser(), $_POST['pid']))
-{	
+{
 	\OCP\Util::writeLog('collaboration', OC_User::getUser() . ' is trying to create task on project with Project ID ' . $_POST['pid'], \OCP\Util::WARN);
-	
+
 	$eve->assign('permission_granted', 'false');
 	$eve->assign('title', $_POST['title']);
-	
+
 	$eve->printPage();
 }
 else
@@ -47,7 +50,7 @@ else
 	if(!isset($_POST['tid']))
 	{
 		$tid = NULL;
-		
+
 		if(isset($_POST['status']))
 		{
 			$tid = OC_Collaboration_Task::createTask($_POST['title'], $_POST['description'], OC_User::getUser(), $_POST['pid'], $_POST['priority'], $_POST['deadline_time'], 'In Progress', $_POST['member']);
@@ -56,18 +59,18 @@ else
 		{
 			$tid = OC_Collaboration_Task::createTask($_POST['title'], $_POST['description'], OC_User::getUser(), $_POST['pid'], $_POST['priority'], $_POST['deadline_time'], 'Unassigned', NULL);
 		}
-	
+
 		if($tid != false && isset($_POST['send_mail']))
 		{
 			OC_Collaboration_Mail::sendTaskCreationMail($_POST['title'], $_POST['description'], $_POST['pid'], $_POST['member'], $_POST['deadline_time']);
 		}
-		
+
 		$eve->assign('title', $l->t('Loading...'));
 		$eve->assign('permission_granted', 'true');
 		$eve->assign('task', $tid);
 
 		$eve->printPage();
-	
+
 	}
 	else
 	{
@@ -83,22 +86,22 @@ else
 		{
 			$_POST['reason'] = NULL;
 		}
-		
+
 		$status = OC_Collaboration_Task::updateTask($_POST['tid'], $_POST['title'], $_POST['description'], OC_User::getUser(), $_POST['pid'], $_POST['priority'], $_POST['deadline_time'], $_POST['status'], $_POST['member'], $_POST['reason']);
-		
+
 		if($status != false && isset($_POST['send_mail']))
 		{
 			OC_Collaboration_Mail::sendTaskCreationMail($_POST['title'], $_POST['description'], $_POST['pid'], $_POST['member'], $_POST['deadline_time']);
 		}
-	
+
 		$eve = new OCP\Template('collaboration', 'event_edit_form', 'user');
-	
+
 		$eve->assign('title', $l->t('Loading...'));
 		$eve->assign('permission_granted', 'true');
 		$eve->assign('task', $_POST['tid']);
 
 		$eve->printPage();
-		
+
 //		print_unescaped('<META HTTP-EQUIV="Refresh" Content="0; URL=' . \OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'submit_change_task')) . '?task=' . $_POST['tid'] . '&title=' . $_POST['title'] . '">');
 	}
 }

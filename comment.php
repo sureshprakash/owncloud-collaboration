@@ -27,6 +27,7 @@ OCP\App::setActiveNavigationEntry( 'collaboration' );
 OCP\Util::addScript('collaboration', 'comment');
 
 OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'comment');
 
 $tpl = new OCP\Template("collaboration", "comment", "user");
@@ -34,7 +35,7 @@ $tpl = new OCP\Template("collaboration", "comment", "user");
 if(isset($_GET['post']))
 {
 	$details = OC_Collaboration_Post::getPostDetails($_GET['post']);
-	
+
 	if(count($details) == 0 || !OC_Collaboration_Post::isPostAccessibleToMember($_GET['post'], OC_User::getUser()))
 	{
 		goToDashboard();
@@ -51,7 +52,7 @@ else
 }
 
 function goToDashboard()
-{	
+{
 	header('Location: ' . \OCP\Util::linkToRoute('collaboration_route', 'dashboard'));
 	exit();
 }

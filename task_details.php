@@ -24,27 +24,30 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
+
 OCP\Util::addScript('collaboration', 'task_details');
 
+
+OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'tabs');
 OCP\Util::addStyle('collaboration', 'task_details');
 
 if(isset($_POST['tid']))
 {
 	$tpl = new OCP\Template("collaboration", "task_details", "user");
-	
+
 	$details = OC_Collaboration_Task::readTask($_POST['tid']);
-	
+
 	if(isset($details['tid']))
 	{
 		$tpl->assign('task_details', $details);
-		$tpl->assign('status_details', OC_Collaboration_Task::readHistory($_POST['tid'])); 
-		
+		$tpl->assign('status_details', OC_Collaboration_Task::readHistory($_POST['tid']));
+
 		if(isset($_POST['msg']))
 		{
 			$tpl->assign('msg', $_POST['msg']);
 		}
-		
+
 		$tpl->printPage();
 	}
 	else

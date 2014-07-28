@@ -24,10 +24,13 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
-OCP\Util::addStyle('collaboration', 'tabs');
-OCP\Util::addStyle('collaboration', 'update_project');
 
 OCP\Util::addScript('collaboration', 'update_project');
+
+
+OCP\Util::addStyle('collaboration', 'content_header');
+OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'update_project');
 
 $l = OC_L10N::get('collaboration');
 
@@ -36,12 +39,12 @@ $bol = OC_Collaboration_Project::isAdmin();
 if($bol == true)
 {
 	$tpl = new OCP\Template('collaboration', 'update_project', 'user');
-	
+
 	if(isset($_POST['pid']))
 	{
 		$tpl->assign('title', $l->t('Update Project'));
 		$tpl->assign('submit_btn_name', $l->t('Update'));
-		
+
 		$tpl->assign('pid', $_POST['pid']);
 		$tpl->assign('project_details', OC_Collaboration_Project::readProject($_POST['pid']));
 	}
@@ -50,21 +53,21 @@ if($bol == true)
 		$tpl->assign('title', $l->t('Create Project'));
 		$tpl->assign('submit_btn_name', $l->t('Create'));
 	}
-	
+
 	$tpl->printPage();
 }
 else
 {
-/*	
+/*
 	Use this if you don't want to redirect
 	OCP\Util::addScript('collaboration', 'display_message');
-	
+
 	$tpl = new OCP\Template('collaboration', 'display_message', 'user');
 	$tpl->assign('title', 'Permission denied');
 	$tpl->assign('msg', 'Sorry, you must have admin rights, to create a project.');
-	$tpl->printPage(); 
+	$tpl->printPage();
 */
-	
+
 	header('Location: ' . \OCP\Util::linkToRoute('collaboration_route', array('rel_path'=>'dashboard')));
 	\OCP\Util::writeLog('collaboration', 'Permission denied for ' . OC_User::getUser() . ' to create project.', \OCP\Util::WARN);
 	exit();

@@ -24,10 +24,14 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
-OCP\Util::addStyle('collaboration', 'tabs');
-OCP\Util::addStyle('collaboration', 'display_message');
 
 OCP\Util::addScript('collaboration', 'display_message');
+
+
+OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'content_header');
+OCP\Util::addStyle('collaboration', 'display_message');
+
 
 $l = OC_L10N::get('collaboration');
 
