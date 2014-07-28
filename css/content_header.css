@@ -1,3 +1,4 @@
+/*content header */
 #title
 {
 	text-align: center;
@@ -6,4 +7,24 @@
 	font-weight: bold;
 	padding-top:10px;
 	padding-bottom:10px;
+}
+
+.ch-right
+{
+  float: right;
+	margin-right:15px;
+}
+
+
+
+/*clear divs*/
+.clear-both
+{
+	clear:both;
+	padding:5px 0 5px 0;
+}
+
+.clear-both-np
+{
+	clear:both;
 }

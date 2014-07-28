@@ -3,10 +3,7 @@
 	clear:both;
 }
 
-#project_list_container
-{
-	float: right;
-}
+
 
 
 .post_title
@@ -20,9 +17,7 @@
 	border-radius: 15px 15px 0px 0px;
 }
 
-#filter_form{
-	margin-right:15px;
-}
+
 
 .contents
 {
@@ -82,15 +77,4 @@
 	height: 100%;
 	margin: 4% 2% 4% 2%;
 	border-radius: 15px 15px 0px 0px;
-}
-
-.clear-both
-{
-	clear:both;
-	padding:5px 0 5px 0;
-}
-
-.clear-both-np
-{
-	clear:both;
 }

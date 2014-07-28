@@ -27,20 +27,16 @@ print_unescaped($this->inc('tabs'));
 <div id="app-content">
 	<div id="content-header" >
     <h1 id="title" ><?php p($l->t('Dashboard')); ?></h1>
-      <div class='clear-both'>
-		    <div id="project_list_container" >
-			   <form id="filter_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get" >
-				   <select id="projects_list" name="project" class="chzen-select" >
-					 <option value="ALL" <?php if(!isset($_['project']) || $_['project'] == 'ALL') { print_unescaped('selected="selected"'); } ?> ><?php p($l->t('Filter By Project')); ?></option>
+			<form id="filter_form" class='ch-right' action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get" >
+				<select id="projects_list" name="project" class="chzen-select" >
+					<option value="ALL" <?php if(!isset($_['project']) || $_['project'] == 'ALL') { print_unescaped('selected="selected"'); } ?> ><?php p($l->t('Filter By Project')); ?></option>
 					 <?php
 					  	foreach($projects as $pid => $ptitle) {
 					  	  print_unescaped('<option value="' . $ptitle . '" ' . (isset($_['project']) && (strtolower($_['project']) == strtolower($ptitle))? 'selected="selected"': '' ) . ' >' . $ptitle . '</option>');
 						  }
 					 ?>
-			     </select>
-		  	 </form>
-       </div>
-		 </div>
+			   </select>
+		  </form>
    </div>
 	 <div id="posts" >
    	<?php
