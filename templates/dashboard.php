@@ -52,7 +52,9 @@ print_unescaped($this->inc('tabs'));
 					  <?php
 							if(isset($each['proj_title']) && !is_null($each['proj_title'])) {
 								p($l->t($each['proj_title']));
-						  }
+						  } else {
+								p($l->t('&nbsp;');
+							}
 						?>
 				  </div>
 					<div class='clear-both-np'>
