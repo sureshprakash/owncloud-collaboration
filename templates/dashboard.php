@@ -53,7 +53,7 @@ print_unescaped($this->inc('tabs'));
 							if(isset($each['proj_title']) && !is_null($each['proj_title'])) {
 								p($l->t($each['proj_title']));
 						  } else {
-								p($l->t('&nbsp;');
+								print_unescaped('<p>&nbsp;</p>');
 							}
 						?>
 				  </div>
