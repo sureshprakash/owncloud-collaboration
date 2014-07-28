@@ -16,6 +16,14 @@
 }
 
 
+/*content body */
+#content-body
+{
+	clear:both;
+	padding:10px;
+}
+
+
 
 /*clear divs*/
 .clear-both

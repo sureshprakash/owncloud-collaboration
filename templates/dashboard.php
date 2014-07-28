@@ -38,7 +38,7 @@ print_unescaped($this->inc('tabs'));
 			   </select>
 		  </form>
    </div>
-	 <div id="posts" >
+	 <div id="content-body" >	
    	<?php
       if(!isset($_['posts']) || count($_['posts']) === 0 || count($_['posts'][0]) === 0) {
 		  	print_unescaped('<div class="clear-both" >');
