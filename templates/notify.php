@@ -19,7 +19,7 @@
  *
  */
 
-	print_unescaped($this->inc('tabs'));
+print_unescaped($this->inc('tabs'));
 ?>
 
 <div id="app-content">

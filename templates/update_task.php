@@ -19,86 +19,54 @@
  *
  */
 
-	print_unescaped($this->inc('tabs'));
+print_unescaped($this->inc('tabs'));
 ?>
+
 <div id="app-content">
-  <h1 id="title"><?php p($_['title']); ?></h1>
-
-	<?php
-		if(!isset($_['tid']) && (!isset($_['projects']) || count($_['projects']) == 0))
-		{
-	?>
-			<p>
-				<?php p($l->t('Sorry, you are not into any project yet. You can create tasks only after joining a project.')); ?>
-			</p>
-	<?php
-		}
-		else
-		{
-	?>
+	<div id="content-header" >
+    <h1 id="title"><?php p($_['title']); ?></h1>
+  </div>
+	<div id="content-body" >
+	  <?php if(!isset($_['tid']) && (!isset($_['projects']) || count($_['projects']) == 0))	{ ?>
+		  <p>
+		  	<?php p($l->t('Sorry, you are not into any project yet. You can create tasks only after joining a project.')); ?>
+		  </p>
+  	<?php } 	else { ?>
 		<form action="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'submit_update_task')));?>" method="post" name="task_updation_form">
-
-		<?php
-			if(isset($_['tid']))
-			{
-		?>
-		<input type="hidden" id="tid" name="tid" value="<?php p($_['tid']); ?>" />
-		<?php
-			}
-		?>
-			<table>
+		  <?php if(isset($_['tid'])) { ?>
+		   <input type="hidden" id="tid" name="tid" value="<?php p($_['tid']); ?>" />
+		  <?php } ?>
+		  <table>
 				<tr>
 					<td>
 						<?php p($l->t('Project')); ?>
-					</td>
-
-					<td>
-						:
-						<?php
-							if(!isset($_['tid']))
-							{
-						?>
+						<?php  if(!isset($_['tid'])) { ?>
 							<span class="required">*</span>
-						<?php
-							}
-						?>
+						<?php } ?>
 					</td>
-
 					<td>
-						<?php
-							if(!isset($_['tid']))
-							{
-						?>
+						<?php if(!isset($_['tid'])) { ?>
 							<select name="pid" id="project" class="chzen-select" required>
-						<?php
-										foreach($_['projects'] as $pid => $ptitle)
-										{
-											print_unescaped('<option value="' . $pid . '" >' . $ptitle . '</option>');
-										}
-						?>
+						   <?php
+								 foreach($_['projects'] as $pid => $ptitle) {
+								 	print_unescaped('<option value="' . $pid . '" >' . $ptitle . '</option>');
+								 }
+						   ?>
 							</select>
-						<?php
-							}
-							else
-							{
+						<?php } else {
 								print_unescaped('<span>' . $_['task_details']['proj_title'] . '</span>');
 								print_unescaped('<input id="project" type="hidden" name="pid" value="' . $_['task_details']['pid'] . '" />');
 							}
 						?>
 						<span id="load_members" > </span>
 					</td>
-
 				</tr>
 
 				<tr>
 					<td>
 						<?php p($l->t('Task Title')); ?>
+						<span class="required">*</span>
 					</td>
-
-					<td>
-						: <span class="required">*</span>
-					</td>
-
 					<td>
 						<input type="text" name="title" pattern="[a-zA-Z]([a-zA-Z0-9]\s?(\-\s)?){2,98}[a-zA-Z0-9]" title="Title can contain alphabets, numbers, spaces and hyphens with 4 to 100 characters. First character should be an alphabet and last one can be an alphabet or a numeral." autocomplete="off" required autofocus <?php if(isset($_['tid'])) print_unescaped('value="'.$_['task_details']['title'].'"'); ?> />
 					</td>
@@ -107,12 +75,8 @@
 				<tr>
 					<td>
 						<?php p($l->t('Task Description')); ?>
+						<span class="required">*</span>
 					</td>
-
-					<td>
-						: <span class="required">*</span>
-					</td>
-
 					<td>
 						<textarea maxlength="3000" name="description" required ><?php if(isset($_['tid'])) p($_['task_details']['description']); ?></textarea>
 					</td>
@@ -121,12 +85,8 @@
 				<tr>
 					<td>
 						<?php p($l->t('Priority')); ?>
+						<span class="required">*</span>
 					</td>
-
-					<td>
-						: <span class="required">*</span>
-					</td>
-
 					<td>
 						<select name="priority" required >
 							<option value="1" <?php if(isset($_['tid']) && $_['task_details']['priority'] == 1) print_unescaped('selected'); ?> ><?php p($l->t('Very High')); ?></option>
@@ -142,24 +102,16 @@
 					<td>
 						<?php p($l->t('Status')); ?>
 					</td>
-
-					<td>
-						:
-					</td>
-
 					<td>
 						<?php
 							$ev_stat = array();
 
 							$status = NULL;
 
-							if(!isset($_['tid']))
-							{
+							if(!isset($_['tid'])) {
 								$ev_stat = OC_Collaboration_Task::getEventStatus('Created', 'Creator');
 								$status = 'New';
-							}
-							else
-							{
+							}	else {
 								$ev_stat = OC_Collaboration_Task::getEventStatus($_['task_details']['status'], 'Creator');
 								$status = $_['task_details']['status'];
 								$member = $_['task_details']['member'];
@@ -168,13 +120,11 @@
 							}
 
 							$i = 0;
-							foreach($ev_stat as $event => $status)
-							{
+							foreach($ev_stat as $event => $status) {
 								print_unescaped('<input class="event" id="event_' . $i . '" value="' . $status . '" name="status" type="radio" data-next-status="' . $status . '" />');
 								print_unescaped('<label for="event_' . $i . '" >' . OC_Collaboration_Task::translateEvent($event) . '</label>');
 
-								switch($event)
-								{
+								switch($event) {
 									case 'Assign':
 										print_unescaped('<span class="event_info" id="event_info_' . $i . '" >
 															<select id="members" name="member" ></select>
@@ -194,37 +144,27 @@
 										break;
 
 								}
-
-								print_unescaped('<br />');
-
 								$i++;
 							}
 						?>
-
 					</td>
-
 				</tr>
 
 				<tr>
 					<td>
 						<?php p($l->t('Deadline')); ?>
+						<span class="required">*</span>
 					</td>
-
-					<td>
-						: <span class="required">*</span>
-					</td>
-
 					<td>
 						<input type="text" id="deadline_time" name="deadline_time" placeholder="MM/DD/YYYY HH:MM" autocomplete="off" required <?php if(isset($_['tid'])) print_unescaped('value="' . OC_Collaboration_Time::convertDBTimeToUITimeShort($_['task_details']['ending_time']) . '"'); ?> />
 					</td>
 				</tr>
 			</table>
 
-			<div id="submit-form" >
-				<input type="submit" value="<?php p($_['submit_btn_name']); ?>" />
-			</div>
-		</form>
-	<?php
-		}
-	?>
+			  <div id="submit-form" >
+				  <input type="submit" value="<?php p($_['submit_btn_name']); ?>" />
+			  </div>
+	    </form>
+	  <?php	} ?>
+  </div>
 </div>
