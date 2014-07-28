@@ -1,77 +1,37 @@
-
-
-
-
+.unit
+{
+	float:left;
+	width: 30%;
+	border:1px solid #ccc;
+	margin:10px;
+}
 
 .post_title
 {
 	padding: 5px;
-	background-color: #62749B;
+	background-color: #1D2D44;
 	color: white;
-	text-align: center;
-	font-size: 20px;
-	margin:0px 0px 0px 0px;
-	border-radius: 15px 15px 0px 0px;
+	font-size: 16px;
 }
 
-
+.cb-wrapper
+{
+	padding:5px;
+}
 
 .contents
 {
-	height: 50%;
+	padding:7px 0 7px 0;
 	font-size: 14px;
-	padding: 10px;
-	text-align: justify;
 }
 
-.btn_comment
+.cb-date
 {
-	color: black;
-}
-
-.details
-{
-	background-color: lightsteelblue;
-	width: 100%;
+	font-size: 10px;
 }
 
 .comment
 {
 	width: 100%;
-	text-align: right;
-}
-/*
-.creation_details
-{
-	float:left;
-	width: 100%;
-	background-color: inherit;
-	text-align: left;
-	padding:5px 0 5px 0;
-}
-*/
-.creation_details
-{
-	float:right;
-	width: 50%;
-	background-color: inherit;
-	text-align: right;
-}
-
-.proj_title
-{
-	float:left;
-	text-align: left;
-	background-color: inherit;
-	width: 50%;
-	height: inherit;
-}
-
-.unit
-{
-	background-color: rgb(207,231,245);
-	width: 96%;
-	height: 100%;
-	margin: 4% 2% 4% 2%;
-	border-radius: 15px 15px 0px 0px;
+	padding-top:10px;
 }

@@ -62,6 +62,7 @@ else
 
 		if($tid != false && isset($_POST['send_mail']))
 		{
+
 			OC_Collaboration_Mail::sendTaskCreationMail($_POST['title'], $_POST['description'], $_POST['pid'], $_POST['member'], $_POST['deadline_time']);
 		}
 

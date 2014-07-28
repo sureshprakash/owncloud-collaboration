@@ -38,46 +38,47 @@ print_unescaped($this->inc('tabs'));
 			   </select>
 		  </form>
    </div>
-	 <div id="content-body" >	
+	 <div id="content-body" >
    	<?php
       if(!isset($_['posts']) || count($_['posts']) === 0 || count($_['posts'][0]) === 0) {
 		  	print_unescaped('<div class="clear-both" >');
-		  	p($l->t('Sorry, no post is available to display.'));
+		  	p($l->t('Sorry, no posts is available to display.'));
 		  	print_unescaped('</div>');
 	  	} else {
 
 			foreach($_['posts'] as $each){ ?>
 			  <div class="unit">
 				  <div class="post_title">
-					  	<?php p($each['title']); ?>
+					  <?php
+							if(isset($each['proj_title']) && !is_null($each['proj_title'])) {
+								p($l->t($each['proj_title']));
+						  }
+						?>
 				  </div>
-				  <div class="contents">
-					  	<?php p($each['content']); ?>
-						  <div class="comment" >
-							  <button class="btn_comment" id="<?php p('btn_comment_' . $each['post_id'])?>" >
-							  	<?php	p($l->t('Comments') . ' (' . OC_Collaboration_Comment::getCommentCount($each['post_id']) . ')');	?>
-							  </button>
-					  	</div>
-			  	</div>
-          <div class='clear-both-np'>
-			  	  <div class="details">
-				  	 <div class="proj_title">
-					  	 <?php
-                if(isset($each['proj_title']) && !is_null($each['proj_title'])) {
-								 p($l->t('Project: %s', array($each['proj_title'])));
-							 }
-						   ?>
-					    </div>
-
-					    <div class="creation_details">
-						    <?php
-						  	  $datetime = explode(' ', $each['time']);
-							    p($l->t('On %s at %s by %s', array($l->l('date', $datetime[0]), $l->l('time', $datetime[1]), $each['creator'])));
-						    ?>
-					    </div>
+					<div class='clear-both-np'>
+						<div class="cb-wrapper">
+						  <div class="details">
+						    <p>
+									<b>Post Status</b>
+									<?php print_unescaped($each['title']); ?>
+						    </p>
+						  </div>
+				      <div class="contents">
+					     <?php p($each['content']); ?>
+			  	    </div>
+              <div class="cb-date">
+	          <?php
+	            	$datetime = explode(' ', $each['time']);
+		           p($l->t('On %s at %s by %s', array($l->l('date', $datetime[0]), $l->l('time', $datetime[1]), $each['creator'])));
+	          ?>
+            </div>
+            <div class="comment" >
+	            <button class="btn_comment" id="<?php p('btn_comment_' . $each['post_id'])?>" >
+		             <?php	p($l->t('Comments') . ' (' . OC_Collaboration_Comment::getCommentCount($each['post_id']) . ')');	?>
+	            </button>
             </div>
 				  </div>
-			   </div>
+			  </div></div>
 	    <?php
 			}
 		}
