@@ -48,7 +48,7 @@ print_unescaped($this->inc('tabs'));
 
 			foreach($_['posts'] as $each){ ?>
 			  <div class="unit">
-				  <div class="post_title">
+				  <div class="cb_title">
 					  <?php
 							if(isset($each['proj_title']) && !is_null($each['proj_title'])) {
 								p($l->t($each['proj_title']));

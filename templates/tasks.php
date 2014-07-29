@@ -39,7 +39,7 @@
 				{
 	   ?>
 			<div class="unit">
-        <div class="task_title">
+        <div class="cb_title">
 					 <?php p($each['title']); ?>
 				</div>
         <div class='clear-both-np'>

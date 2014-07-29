@@ -45,7 +45,7 @@ print_unescaped($this->inc('tabs'));
    <div id="content-body" >
 	    <?php 	foreach($_['projects'] as $each) { ?>
 				<div class="unit">
-					<div class="project_title">
+					<div class="cb_title">
 							<?php p($each['title']); ?>
 					</div>
           <div class='clear-both-np'>

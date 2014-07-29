@@ -23,6 +23,39 @@
 	padding:10px;
 }
 
+.unit
+{
+	float:left;
+	width: 300px;
+	border:1px solid #ccc;
+	margin:10px;
+}
+
+.cb_title
+{
+	padding: 5px;
+	background-color: #1D2D44;
+	color: white;
+	font-size: 16px;
+}
+
+.cb-wrapper
+{
+	padding:5px;
+}
+
+.contents
+{
+	padding:7px 0 7px 0;
+	font-size: 14px;
+}
+
+.cb-date
+{
+	font-size: 10px;
+}
+
+
 
 
 /*clear divs*/
