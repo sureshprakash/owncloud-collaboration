@@ -26,10 +26,19 @@
 .unit
 {
 	float:left;
-	width: 300px;
+	width: 100%;
+	margin:10px 0 10px 0;
 	border:1px solid #ccc;
-	margin:10px;
 }
+
+@media only screen and (min-width: 640px)
+{
+  .unit {
+    width:300px;
+		margin:10px 10px 0 10px;
+  }
+}
+
 
 .cb_title
 {
