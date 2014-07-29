@@ -22,8 +22,10 @@
     print_unescaped($this->inc('tabs'));
 ?>
 <div id="app-content">
-	<h1 id="title" ><?php p($l->t('Tasks')); ?></h1>
-	<div id="tasks_list" >
+  <div id="content-header" >
+    <h1 id="title" ><?php p($l->t('Tasks')); ?></h1>
+  </div>
+  <div id="content-body" >
 		<?php
 			if(!isset($_['tasks']) || count($_['tasks']) === 0 || count($_['tasks'][0]) === 0)
 			{
@@ -36,68 +38,64 @@
 				foreach($_['tasks'] as $each)
 				{
 	   ?>
-				<div class="unit">
-					<div class="task_title">
-							<?php p($each['title']); ?>
-					</div>
-
+			<div class="unit">
+        <div class="task_title">
+					 <?php p($each['title']); ?>
+				</div>
+        <div class='clear-both-np'>
+          <div class="cb-wrapper">
 					<div class="contents">
-						<div class="description">
+            <div class="details">
+              <p>
+                <b>Task Status</b>
+                <?php
+                  print_unescaped(
+                    OC_Collaboration_Task::getStatusInFormat($each['status'],
+                    $each['member'],
+                    $each['creator']
+                  ));
+                ?>
+              </p>
+            </div>
+						<div class="contents">
 							<?php p($each['description']); ?>
 						</div>
-							<br />
-							<form class="view_details" action="<?php p(\OCP\Util::linkToRoute('collaboration_route', array('rel_path'=>'task_details'))); ?>" method="post" >
-								<input type="hidden" name="tid" value="<?php p($each['tid']); ?>" />
-								<input type="submit" value="<?php p($l->t('View details'));	?>" />
-						</form>
-							<?php
-								if(strcasecmp(OC_Collaboration_Task::getTaskCreator($each['tid']), OC_User::getUser()) == 0)
-								{
-									if(strcasecmp($each['status'], 'Cancelled') != 0 && strcasecmp($each['status'], 'Verified') != 0)
-									{
-							?>
+            <div class="cb-date">
+              <?php
+                $datetime = OC_Collaboration_Time::convertDBTimeToUITime($each['ending_time']);
+                p($l->t('Deadline: %s', array($l->l('datetime', $datetime))));
+              ?>
+            </div>
+            <div class="comment" >
+						  <form class="view_details" action="<?php p(\OCP\Util::linkToRoute('collaboration_route', array('rel_path'=>'task_details'))); ?>" method="post" >
+							  	<input type="hidden" name="tid" value="<?php p($each['tid']); ?>" />
+								  <input type="submit" value="<?php p($l->t('View details'));	?>" />
+						  </form>
+							 <?php if(strcasecmp(OC_Collaboration_Task::getTaskCreator($each['tid']), OC_User::getUser()) == 0) {  ?>
+                 <?php	if(strcasecmp($each['status'], 'Cancelled') != 0 && strcasecmp($each['status'], 'Verified') != 0)	{ ?>
 										<div class="edit" >
 											<button class="btn_edit" id="<?php p('btn_edit_' . $each['tid'])?>" >
-													<?php
-														p($l->t('Edit'));
-													?>
+												<?php	p($l->t('Edit')); ?>
 											</button>
 										</div>
-							<?php
-									}
-								}
+						  	  <?php } ?>
+								<?php } ?>
+                <?php
+								  if(strcasecmp(OC_Collaboration_Task::getWorkingMember($each['tid']), OC_User::getUser()) == 0) {
+									  print_unescaped('<div class="status_event" data-tid="' . $each['tid'] . '" >');
+                    $ev_stat = OC_Collaboration_Task::getEventStatus($each['status'], 'Performer');
 
-								if(strcasecmp(OC_Collaboration_Task::getWorkingMember($each['tid']), OC_User::getUser()) == 0)
-								{
-									print_unescaped('<div class="status_event" data-tid="' . $each['tid'] . '" >');
+									  foreach($ev_stat as $event => $status) {
+										  print_unescaped('<button class="event_btn" value="' . $event . '" >' . OC_Collaboration_Task::translateEvent($event) . '</button>');
+									  }
 
-									$ev_stat = OC_Collaboration_Task::getEventStatus($each['status'], 'Performer');
-
-									foreach($ev_stat as $event => $status)
-									{
-										print_unescaped('<button class="event_btn" value="' . $event . '" >' . OC_Collaboration_Task::translateEvent($event) . '</button>');
-									}
-
-									print_unescaped('</div>');
-								}
-							?>
-					</div>
-
-					<div class="details">
-						<div class="task_status">
-							<?php
-								p($l->t('Status: %s', array(OC_Collaboration_Task::getStatusInFormat($each['status'], $each['member'], $each['creator']))));
-							?>
-						</div>
-
-						<div class="deadline_details">
-							<?php
-								$datetime = OC_Collaboration_Time::convertDBTimeToUITime($each['ending_time']);
-								p($l->t('Deadline: %s', array($l->l('datetime', $datetime))));
-							?>
-						</div>
+									  print_unescaped('</div>');
+								  } ?>
+            </div>
 					</div>
 				</div>
+      </div>
+    </div>
 	<?php
 			}
 		}
