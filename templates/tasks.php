@@ -58,7 +58,7 @@
               </p>
             </div>
 						<div class="contents">
-							<?php p($each['description']); ?>
+							<?php print_unescaped($each['description']); ?>
 						</div>
             <div class="cb-date">
               <?php

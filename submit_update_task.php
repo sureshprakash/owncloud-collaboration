@@ -36,32 +36,27 @@ $l = OC_L10N::get('collaboration');
 
 $eve = new OCP\Template('collaboration', 'event_form', 'user');
 
-if(!OC_Collaboration_Project::isMemberWorkingOnProject(OC_User::getUser(), $_POST['pid']))
-{
+if(!OC_Collaboration_Project::isMemberWorkingOnProject(OC_User::getUser(), $_POST['pid'])) {
 	\OCP\Util::writeLog('collaboration', OC_User::getUser() . ' is trying to create task on project with Project ID ' . $_POST['pid'], \OCP\Util::WARN);
 
 	$eve->assign('permission_granted', 'false');
 	$eve->assign('title', $_POST['title']);
 
 	$eve->printPage();
-}
-else
-{
-	if(!isset($_POST['tid']))
-	{
+	
+} else {
+	if(!isset($_POST['tid'])) {
 		$tid = NULL;
 
-		if(isset($_POST['status']))
-		{
+		if(isset($_POST['status'])) {
 			$tid = OC_Collaboration_Task::createTask($_POST['title'], $_POST['description'], OC_User::getUser(), $_POST['pid'], $_POST['priority'], $_POST['deadline_time'], 'In Progress', $_POST['member']);
-		}
-		else
-		{
+
+		} else {
 			$tid = OC_Collaboration_Task::createTask($_POST['title'], $_POST['description'], OC_User::getUser(), $_POST['pid'], $_POST['priority'], $_POST['deadline_time'], 'Unassigned', NULL);
+
 		}
 
-		if($tid != false && isset($_POST['send_mail']))
-		{
+		if($tid != false && isset($_POST['send_mail'])) 	{
 
 			OC_Collaboration_Mail::sendTaskCreationMail($_POST['title'], $_POST['description'], $_POST['pid'], $_POST['member'], $_POST['deadline_time']);
 		}
@@ -72,26 +67,20 @@ else
 
 		$eve->printPage();
 
-	}
-	else
-	{
-		if(!isset($_POST['status']))
-		{
+	} else {
+		if(!isset($_POST['status'])) {
 			$_POST['status'] = NULL;
 		}
-		if(!isset($_POST['member']))
-		{
+		if(!isset($_POST['member'])) {
 			$_POST['member'] = NULL;
 		}
-		if(!isset($_POST['reason']))
-		{
+		if(!isset($_POST['reason'])) {
 			$_POST['reason'] = NULL;
 		}
 
 		$status = OC_Collaboration_Task::updateTask($_POST['tid'], $_POST['title'], $_POST['description'], OC_User::getUser(), $_POST['pid'], $_POST['priority'], $_POST['deadline_time'], $_POST['status'], $_POST['member'], $_POST['reason']);
 
-		if($status != false && isset($_POST['send_mail']))
-		{
+		if($status != false && isset($_POST['send_mail'])) {
 			OC_Collaboration_Mail::sendTaskCreationMail($_POST['title'], $_POST['description'], $_POST['pid'], $_POST['member'], $_POST['deadline_time']);
 		}
 

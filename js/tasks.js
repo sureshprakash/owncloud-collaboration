@@ -59,6 +59,7 @@ $(document).ready(function()
 
 function editTask(event)
 {
+	alert();
 	$('#collaboration_content').append('<form id="edit_task" method="post" action="' + OC.Router.generate('collaboration_route', {rel_path: 'update_task'}) + '" ><input type="hidden" name="tid" value="' + this.id.substr(9) + '" /></form>');
 	$("#edit_task").submit();
 
