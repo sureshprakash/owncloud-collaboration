@@ -58,6 +58,11 @@
 	padding:7px 0 7px 0;
 	font-size: 14px;
 }
+h2
+{
+
+}
+
 table
 {
 	width:80%;
@@ -66,6 +71,7 @@ table
 table td
 {
 	padding-top:5px;
+	word-wrap: break-word;
 }
 
 table td h2,
