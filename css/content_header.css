@@ -59,6 +59,13 @@
 	font-size: 14px;
 }
 
+
+.cb-wrapper .contents h2
+{
+ font-weight:900;
+ padding-top:5px;
+}
+
 .cb-date
 {
 	font-size: 10px;
