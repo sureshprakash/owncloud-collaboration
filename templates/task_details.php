@@ -35,7 +35,7 @@
 		</tr>
     <tr>
 			<td><?php p($l->t('Task Description')); ?></td>
-      <td><?php p($_['task_details']['description']); ?></td>
+      <td><?php print_unescaped($_['task_details']['description']); ?></td>
 		</tr>
     <tr>
 			<td><?php p($l->t('Priority')); ?></td>

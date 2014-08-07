@@ -59,7 +59,12 @@
 	font-size: 14px;
 }
 
+table td
+{
+	padding-top:5px;
+}
 
+table td h2,
 .cb-wrapper .contents h2
 {
  font-weight:900;
