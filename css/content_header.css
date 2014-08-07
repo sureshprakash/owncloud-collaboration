@@ -58,6 +58,10 @@
 	padding:7px 0 7px 0;
 	font-size: 14px;
 }
+table
+{
+	width:80%;
+}
 
 table td
 {
