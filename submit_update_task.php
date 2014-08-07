@@ -43,7 +43,7 @@ if(!OC_Collaboration_Project::isMemberWorkingOnProject(OC_User::getUser(), $_POS
 	$eve->assign('title', $_POST['title']);
 
 	$eve->printPage();
-	
+
 } else {
 	if(!isset($_POST['tid'])) {
 		$tid = NULL;

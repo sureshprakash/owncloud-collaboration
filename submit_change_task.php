@@ -36,16 +36,12 @@ $l = OC_L10N::get('collaboration');
 
 $tpl = new OCP\Template('collaboration', 'display_message', 'user');
 
-if($_GET['task'] != false)
-{
+if($_GET['task'] != false) {
 	$tpl->assign('title', $l->t('Success'));
 	$tpl->assign('msg', $l->t('Task \'%s\' has been successfully updated.', array($_GET['title'])));
-}
-else
-{
+} else {
 	$tpl->assign('title', $l->t('Failed'));
 	$tpl->assign('msg', $l->t('Task \'%s\' cannot be updated. Kindly try after some time.', array($_GET['title'])));
 }
-
 $tpl->printPage();
 ?>
