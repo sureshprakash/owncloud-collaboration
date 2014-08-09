@@ -24,10 +24,13 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
-OCP\Util::addStyle('collaboration', 'tabs');
-OCP\Util::addStyle('collaboration', 'display_message');
 
 OCP\Util::addScript('collaboration', 'display_message');
+
+
+OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'content_header');
+OCP\Util::addStyle('collaboration', 'display_message');
 
 $l = OC_L10N::get('collaboration');
 
@@ -37,7 +40,7 @@ if($_GET['task'] != false && $_GET['task'] != 0)
 {
 	$tpl->assign('title', $l->t('Success'));
 	$tpl->assign('msg', $l->t('Task \'%s\' has been created successfully.', array($_GET['title'])));
-	
+
 	OC_Collaboration_Task::addEvent($_GET['task'], $_GET['event_id']);
 }
 else

@@ -26,8 +26,8 @@ OC_Hook::connect('OCP\Share', 'post_shared', 'OC_Collaboration_Hooks', 'notifyFi
 	'id' => 'collaboration',
 	'order' => 0,
 	'href' => \OCP\Util::linkToRoute('collaboration_route', array('rel_path' => '')),
-	'icon' => \OCP\Util::imagePath('collaboration','collaboration.png'),
+	'icon' => \OCP\Util::imagePath('collaboration','collaboration.svg'),
 	'name' => $l->t('Collaboration')
 	));
-	
+
 ?>

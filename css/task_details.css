@@ -1,15 +1,14 @@
-#title
-{	
-	text-align: center; 
-	font-size: 20px;
-	text-transform: uppercase;
-	font-weight: bold;
+#tasks-wrapper
+{
+	clear:both;
+	padding-left:10px;
 }
-
 #details tr td:nth-child(1)
 {
 	font-weight: bold;
+	padding-right:5px;
 }
+
 
 #status_table tr:nth-child(2)
 {

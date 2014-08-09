@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * ownCloud - collaboration plugin
  *
@@ -19,109 +19,82 @@
  *
  */
 
-	print_unescaped($this->inc('tabs'));
+print_unescaped($this->inc('tabs'));
 ?>
 
-<div id="collaboration_content" >
-	<h1 id="title" >
-		<?php p($l->t('Notify')); ?>
-	</h1>
-	
-	<?php
-		if(!isset($_['projects']) || count($_['projects']) == 0)
-		{
-	?>
-			<p>
-				<?php p($l->t('Sorry, you are not into any project yet. You can notify only after joining a project.')); ?>
+<div id="app-content">
+	<div id="content-header" >
+	  <h1 id="title" ><?php p($l->t('Notify')); ?></h1>
+	</div>
+	<div id="content-body" >
+	  <?php if(!isset($_['projects']) || count($_['projects']) == 0) { ?>
+		  <p>
+			  <?php p($l->t('Sorry, you are not into any project yet. You can notify only after joining a project.')); ?>
 			</p>
-	<?php		
-		}
-		else
-		{
-	?>
+	  <?php	}	else { ?>
 		<form method="post" id="notification_form" >
 			<table>
 				<tr>
 					<td>
 						<?php p($l->t('Project')); ?>
+						<span class="required">*</span>
 					</td>
-			
-					<td>
-						: <span class="required">*</span>
-					</td>
-			
+
 					<td>
 						<select name="pid" id="project" class="chzen-select" >
 							<?php
-								foreach($_['projects'] as $pid => $ptitle)
-								{
+								foreach($_['projects'] as $pid => $ptitle)	{
 									print_unescaped('<option value="' . $pid . '" >' . $ptitle . '</option>');
 								}
-							?>	
+							?>
 						</select>
 						<span id="load_members" > </span>
 					</td>
-		
 				</tr>
-			
+
 				<tr>
 					<td>
 						<?php p($l->t('Notification Subject')); ?>
+						<span class="required">*</span>
 					</td>
-			
-					<td>
-						: <span class="required">*</span>
-					</td>
-				
 					<td>
 						<input type="text" name="title" pattern="[a-zA-Z]([a-zA-Z0-9]\s?(\-\s)?){2,98}[a-zA-Z0-9]" title="Title can contain alphabets, numbers, spaces and hyphens with 4 to 100 characters. First character should be an alphabet and last one can be an alphabet or a numeral." autocomplete="off" required autofocus />
 					</td>
 				</tr>
-		
-				<tr> 
+
+				<tr>
 					<td>
 						<?php p($l->t('Notification Message')); ?>
+						<span class="required">*</span>
 					</td>
-			
-					<td>
-						: <span class="required">*</span>
-					</td>
-				
 					<td>
 						<textarea max="3000" name="content" required ></textarea>
 					</td>
 				</tr>
-			
+
 				<tr>
 					<td>
 						<?php p($l->t('Notify')); ?>
 					</td>
-				
-					<td>
-						:
-					</td>
-				
 					<td>
 						&nbsp;&nbsp;<input id="notify_all" type="checkbox" name="post_to_all" checked/>
 						<?php p($l->t('Notify all')); ?>
 						<br />
-					
+
 						<select id="notify_to" multiple="multiple">
 						</select>
-					
+
 						<div id="member_container" >
 							<select id="members_list" name="notify_to[]" disabled="disabled" multiple="multiple" required>
 							</select>
 						</div>
 					</td>
-				</tr>
-			</table>
-
-			<div id="submit-form" >
-				<button id="btn_submit" ><?php p($l->t('Send')); ?></button>
-			</div>
-		</form>
-	<?php
-		}
-	?>
+				  </tr>
+			  </table>
+			   <div id="submit-form" >
+				  <button id="btn_submit" ><?php p($l->t('Send')); ?></button>
+			  </div>
+		  </form>
+	  <?php }?>
+  </div>
 </div>

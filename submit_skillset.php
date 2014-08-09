@@ -24,10 +24,13 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
-OCP\Util::addStyle('collaboration', 'tabs');
-OCP\Util::addStyle('collaboration', 'display_message');
 
 OCP\Util::addScript('collaboration', 'display_message');
+
+
+OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'content_header');
+OCP\Util::addStyle('collaboration', 'display_message');
 
 $l = OC_L10N::get('collaboration');
 
@@ -49,11 +52,11 @@ if(count($_POST) != 0)
 		if(strpos($key, 'skill_name') === 0)
 		{
 			$id = substr($key, 10);
-		
+
 			$details[$i]['skill'] = $value;
 			$details[$i]['expertise'] = $_POST['expertise' . $id];
 			$details[$i]['experience'] = $_POST['skill_exp' . $id];
-		
+
 			$i++;
 		}
 	}

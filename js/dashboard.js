@@ -135,7 +135,8 @@ function filter()
 
 function comment(id)
 { 
-		window.location.href = OC.Router.generate('collaboration_route', {'rel_path': 'comment'}) + '?post=' + id; 
+		/*window.location.href = OC.Router.generate('collaboration_route', {'rel_path': 'comment'}) + '?post=' + id;*/
+		window.location.href = OC.generateUrl('apps/collaboration/dashboard/{comment}') + '?post=' + id; 
 }
 
 function showLoadingImage(id)

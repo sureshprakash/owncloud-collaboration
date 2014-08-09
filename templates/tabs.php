@@ -19,68 +19,58 @@
  *
  */
 ?>
-<div id="controls">
-    <div class="actions">
-        
-        <div class="button" id="dashboard">
-            <a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'dashboard')));?>"><?php p($l->t('Dashboard')) ?></a>
-        </div>
-        
-        <div class="button" id="projects">
-            <a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'projects')));?>"><?php p($l->t('Projects')) ?></a>
-        </div>
-        
-        <?php
-            if(OC_Collaboration_Project::isAdmin())
-            {
-        ?>
-        
-        <div class="button" id="create_project">
-            <a class="svg icon icon-add" href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'update_project')));?>">&nbsp;</a>
-        </div>
-        
-        <?php
-            }
-        ?>
-        
-        <div class="button" id="tasks">
-            <a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'tasks')));?>"><?php p($l->t('Tasks')) ?></a>
-        </div>
-        
-        <?php
-            if(OC_Collaboration_Project::isAdmin())
-            {
-        ?>
-        
-        <div class="button" id="create_task" original-title="<?php p($l->t('Create Task')) ?>">
-            <a class="svg icon icon-add" href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'update_task')));?>">&nbsp;</a>
-        </div>
-        
-        <?php
-            }
-        ?>
-        
-        <?php
-            if(OC_Collaboration_Project::isAdmin())
-            {
-        ?>
-        
-        <div class="button" id="report">
-            <a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'report')));?>"><?php p($l->t('Report')) ?></a>
-        </div>
-        
-        <?php
-            }
-        ?>
-        
-        <div class="button" id="notify">
-            <a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'notify')));?>"><?php p($l->t('Notify')) ?></a>
-        </div>
-        
-        <div class="button" id="skill_set">
-            <a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'skillset')));?>"><?php p($l->t('My Skillset')) ?></a>
-        </div>
-        
-    </div>
-</div>
-<div class="tabs_spacer"></div>
+<nav id="app-navigation">
+		<ul id="navigation-list">
+			<li id="dashboard" class="tab">
+				<a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'dashboard')));?>">
+					<?php p($l->t('Dashboard')) ?>
+				</a>
+			</li>
+
+			<?php if(OC_Collaboration_Project::isAdmin()) { ?>
+			  <li id="create_project" class="tab">
+				  <a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'update_project')));?>">
+					  <?php p($l->t('Create Project')) ?>
+				  </a>
+			  </li>
+
+			  <li id="create_task" class="tab">
+				  <a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'update_task' )));?>">
+					  <?php p($l->t('Create Task')) ?>
+			  	</a>
+			  </li>
+			<?php 	} //-- end admin	?>
+
+			<li id="projects" class="tab">
+				<a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'projects' )));?>">
+					<?php p($l->t('Projects')) ?>
+				</a>
+			</li>
+
+			<li id="tasks" class="tab">
+				<a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'tasks' )));?>">
+					<?php p($l->t('Tasks')) ?>
+				</a>
+			</li>
+
+			<?php if(OC_Collaboration_Project::isAdmin()){ ?>
+			  <li id="report" class="tab">
+				  <a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'report' )));?>">
+					  <?php p($l->t('Report')) ?>
+				  </a>
+			  </li>
+			<?php 	} //-- end admin	?>
+
+			<li id="notify" class="tab">
+				<a href="<?php print_unescaped(OCP\Util::linkToRoute( 'collaboration_route', array('rel_path' => 'notify' )));?>">
+					<?php p($l->t('Notify')) ?>
+				</a>
+			</li>
+
+			<li id="skill_set" class="tab">
+				<a href="<?php print_unescaped(OCP\Util::linkToRoute('collaboration_route', array('rel_path' => 'skillset')));?>">
+					<?php p($l->t('My Skillset')) ?>
+				</a>
+			</li>
+		</ul>
+</nav>
