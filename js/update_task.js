@@ -4,10 +4,10 @@
 * See the COPYING-README file.
 */
 
-String.prototype.toTitleCase = function () 
+String.prototype.toTitleCase = function ()
 {
 	var A = this.split(' '), B = [];
-	for (var i = 0; A[i] !== undefined; i++) 
+	for (var i = 0; A[i] !== undefined; i++)
 	{
 		B[B.length] = A[i].substr(0, 1).toUpperCase() + A[i].substr(1).toLowerCase();
 	}
@@ -15,25 +15,25 @@ String.prototype.toTitleCase = function ()
 }
 
 $(document).ready(function()
-{	
+{
 	$("#collaboration_content").css({marginLeft: $("#tabs_collaboration").outerWidth(true), padding: '10px'});
-	
+
 	if($("#project").length != 0)
 	{
 		loadMembersList();
 	}
-	
+
 	$("#deadline_time").datetimepicker(
 	{
 		minDate: 1,
 		timeFormat: 'HH:mm'
 	});
-	
+
 	$("#project").bind("change", loadMembersList);
-	
+
 	$(".event_info").css({display: 'none'});
-	
-	$(".event").bind("change", function(event) 
+
+	$(".event").bind("change", function(event)
 	{
 		if($(this).is(':checked'))
 		{
@@ -41,12 +41,12 @@ $(document).ready(function()
 			$('#event_info_' + this.id.substr(6)).css({display: 'inline'});
 		}
 	});
-	
+
 	if($('input[name="tid"]').length == 0)
 	{
 		$("#create_task img").css({opacity: 1.0});
 		$("#create_task a").css({color: 'black', backgroundColor: '#E9E3E3'});
-		
+
 		$("#project").chosen(
 		{
 			no_results_text: t('collaboration', 'No matches found!'),
@@ -56,7 +56,7 @@ $(document).ready(function()
 	else
 	{
 		var status = $('#task_status').text();
-		
+
 		if(status.indexOf('Cancelled') != -1 || status.indexOf('Verified') != -1)
 		{
 			// OC.Router.generate() will work only after loading the page completely
@@ -64,12 +64,12 @@ $(document).ready(function()
 			{
 				$('#collaboration_content').append('<form id="task_details" method="post" action="" >' +
 				'<input type="hidden" name="tid" value="' + $('#tid').val() + '" />' +
-				'<input type="hidden" name="msg" value="' + 
+				'<input type="hidden" name="msg" value="' +
 				((status.indexOf('Cancelled') != -1)?
 				t('collaboration', 'You cannot make changes on a cancelled task.'):
 				t('collaboration', 'You cannot make changes on a verified task.')) + '" />' +
 				'</form>');
-			
+
 				$('#task_details').attr('action', OC.Router.generate('collaboration_route', {rel_path: 'task_details'}));
 				$('#task_details').submit();
 			}, 10);
@@ -80,46 +80,50 @@ $(document).ready(function()
 function loadMembersList()
 {
 	showLoadingImage('load_members');
-	
 	$.ajax(
 	{
 		type: 'POST',
 		url: OC.filePath('collaboration', 'ajax', 'load_members.php'),
 		data: {'pid': $("#project").val()},
-		success: 
+		success:
 		function(data)
 		{
 			$("#load_members").empty();
-			
+
 			if (data.status == 'success')
 			{
 				var list = '';
 				var user = oc_current_user.toLowerCase();
-				
+
 				for(var role in data.members)
 				{
 					list += '<optgroup label="' + role + '">';
-					
+
 					for(var member in data.members[role])
 					{
 						list += '<option value="' + data.members[role][member].toTitleCase() + '" ' + ((data.members[role][member].toLowerCase() == user)? ' selected="selected"': '') + ' >' + data.members[role][member].toTitleCase() + '</option>';
 					}
-					
+
 					list += '</optgroup>';
 				}
-				
+
 				$("#members").html(list);
-				
-				$("#skillset_link").attr('href', OC.Router.generate('collaboration_route', {rel_path: 'skillset_details'}) + '?project=' + $("#project").val());
-				
+
+
+
+			//	$("#skillset_link").attr('href', OC.generateUrl('apps/collaboration/update_task', {rel_path: 'skillset_details'}) + '?project=' + $("#project").val());
+
+
+				//$("#skillset_link").attr('href', OC.Router.generate('collaboration_route', {rel_path: 'skillset_details'}) + '?project=' + $("#project").val());
+
 				var deadline = '';
-				
+
 				$.ajax(
 				{
 					type: 'POST',
 					url: OC.filePath('collaboration', 'ajax', 'get_project_deadline.php'),
 					data: {'pid': $("#project").val()},
-					success: 
+					success:
 					function(inner)
 					{
 						if(inner.status == 'success')
@@ -146,7 +150,6 @@ function showLoadingImage(id)
 	var img = document.createElement('img');
 	img.setAttribute('src', OC.imagePath('core', 'loading.gif'));
 	$(img).css({width: '15px', height: '15px'});
-	
+
 	$("#" + id).append(img);
 }
-

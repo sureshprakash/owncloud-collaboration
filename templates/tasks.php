@@ -20,6 +20,7 @@
  */
 
     print_unescaped($this->inc('tabs'));
+    print_r($_['tasks']['proj_title']);
 ?>
 <div id="app-content">
   <div id="content-header" >
@@ -45,7 +46,13 @@
         <div class='clear-both-np'>
           <div class="cb-wrapper">
 					<div class="contents">
-            <div class="details">
+            <div class="cb-date">
+              <p>
+                <b>Project</b>
+                <?php print_unescaped( $each['proj_title']); ?>
+              </p>
+            </div>
+            <div class="cb-date">
               <p>
                 <b>Task Status</b>
                 <?php
@@ -57,15 +64,22 @@
                 ?>
               </p>
             </div>
-						<div class="contents">
-							<?php print_unescaped($each['description']); ?>
-						</div>
             <div class="cb-date">
+              <b> Deadline</b>
               <?php
                 $datetime = OC_Collaboration_Time::convertDBTimeToUITime($each['ending_time']);
-                p($l->t('Deadline: %s', array($l->l('datetime', $datetime))));
+                p($l->t(' %s', array($l->l('datetime', $datetime))));
               ?>
             </div>
+            <!--
+            <div class="cb-date">
+              <a href='#' class="open-description">Read more</a>
+            </div>
+            -->
+						<div class="unit-description">
+							<?php print_unescaped($each['description']); ?>
+						</div>
+
             <div class="comment" >
 						  <form class="view_details" action="<?php p(\OCP\Util::linkToRoute('collaboration_route', array('rel_path'=>'task_details'))); ?>" method="post" >
 							  	<input type="hidden" name="tid" value="<?php p($each['tid']); ?>" />
