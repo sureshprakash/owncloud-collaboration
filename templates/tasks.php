@@ -20,27 +20,40 @@
  */
 
     print_unescaped($this->inc('tabs'));
-    print_r($_['tasks']['proj_title']);
+   // print_r($_['tasks']);
 ?>
 <div id="app-content">
   <div id="content-header" >
     <h1 id="title" ><?php p($l->t('Tasks')); ?></h1>
+    <?php
+      if(!isset($_['tasks']) || count($_['tasks']) === 0 || count($_['tasks'][0]) === 0)	{
+        print_unescaped('<p>'.$l->t('Sorry, no project is available yet to display.').'</p>');
+      }	else {
+    ?>
+    <form id="search_form" class='ch-right' action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get" >
+      <select id="search_list" name="project" class="chzen-select" >
+        <option value="ALL" <?php if(!isset($_['project']) || $_['project'] == 'ALL') { print_unescaped('selected="selected"'); } ?> ><?php p($l->t('Search for tasks by project')); ?></option>
+        <?php
+          foreach($_['tasks'] as $each) {
+            print_unescaped('<option value="'.$each["proj_title"].'" >'.$each["proj_title"].'</option>');
+          }
+        ?>
+      </select>
+      <?php } ?>
+    </form>
   </div>
   <div id="content-body" >
 		<?php
-			if(!isset($_['tasks']) || count($_['tasks']) === 0 || count($_['tasks'][0]) === 0)
-			{
+			if(!isset($_['tasks']) || count($_['tasks']) === 0 || count($_['tasks'][0]) === 0)	{
 				print_unescaped('<p>');
 				p($l->t('Sorry, no task is available to display.'));
 				print_unescaped('</p>');
-			}
-			else
-			{
-				foreach($_['tasks'] as $each)
-				{
+
+			} else {
+			 foreach($_['tasks'] as $each) {
 	   ?>
-			<div class="unit">
-        <div class="cb_title">
+			 <div class="unit">
+         <div class="cb_title">
 					 <?php p($each['title']); ?>
 				</div>
         <div class='clear-both-np'>

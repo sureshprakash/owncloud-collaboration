@@ -16,6 +16,10 @@ String.prototype.toTitleCase = function ()
 
 $(document).ready(function()
 {
+	/** Small editor */
+	$('.text-editor').jqte();
+	
+	
 	$("#collaboration_content").css({marginLeft: $("#tabs_collaboration").outerWidth(true), padding: '10px'});
 
 	if($("#project").length != 0)
