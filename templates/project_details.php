@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * ownCloud - collaboration plugin
  *
@@ -22,7 +22,7 @@
 	print_unescaped($this->inc('tabs'));
 ?>
 
-<div id="collaboration_content" >
+<div id="app-content">
 	<h1 id="title">
 		<?php p($l->t('Project Details')); ?>
 	</h1>
@@ -36,10 +36,10 @@
 			<td>
 				:
 			</td>
-			
+
 			<td>
-				<?php 
-					p($_['project_details']['title']); 
+				<?php
+					p($_['project_details']['title']);
 				?>
 			</td>
 		</tr>
@@ -48,7 +48,7 @@
 			<td>
 				<?php p($l->t('Description')); ?>
 			</td>
-		
+
 			<td>
 				:
 			</td>
@@ -57,7 +57,7 @@
 				<?php p($_['project_details']['description']); ?>
 			</td>
 		</tr>
-	
+
 		<tr>
 			<td>
 				<?php p($l->t('Deadline')); ?>
@@ -66,14 +66,14 @@
 			<td>
 				:
 			</td>
-	
+
 			<td>
 				<?php
-					p(OC_Collaboration_Time::convertDBTimeToUIDate($_['project_details']['ending_date'])); 
+					p(OC_Collaboration_Time::convertDBTimeToUIDate($_['project_details']['ending_date']));
 				?>
 			</td>
 		</tr>
-		
+
 		<tr>
 			<td>
 				<?php p($l->t('Status')); ?>
@@ -82,7 +82,7 @@
 			<td>
 				:
 			</td>
-	
+
 			<td id="project_status" >
 				<?php
 					if($_['project_details']['completed'] == true)
@@ -109,18 +109,18 @@
 			<td>
 				:
 			</td>
-			
+
 			<td>
 			</td>
 		</tr>
-		
+
 	</table>
-	
+
 	<table id="members_list" >
-			
+
 		<?php
 			$member_role = OC_Collaboration_Project::getMembers($_['project_details']['pid']);
-			
+
 			if(count($member_role) != 0)
 			{
 		?>
@@ -130,22 +130,22 @@
 				</tr>
 		<?php
 			}
-			
+
 			foreach($member_role as $role => $members)
 			{
 				print_unescaped('<tr><td>' . $role . '</td><td>');
-		
+
 				foreach($members as $index => $member)
 				{
 					print_unescaped($member . '<br />');
 				}
-		
+
 				print_unescaped('</td></tr>');
 			}
-	
+
 		?>
 	</table>
-	
+
 	<?php
 		if(OC_Collaboration_Project::isProjectCreatedByMember($_['project_details']['pid'], OC_User::getUser()))
 		{

@@ -17,8 +17,7 @@ function getDocHeight()
 
 $(document).ready(function()
 {
-	$("#projects img").css({opacity: 1.0});
-	$("#projects a").css({color: 'black', backgroundColor: '#E9E3E3'});
+	$("#projects").css({color: 'black', backgroundColor: '#E9E3E3'});
 	$("#collaboration_content").css({marginLeft: $("#tabs_collaboration").outerWidth(true), padding: '10px'});
 
 	if($("#search_list").val() == 'ALL' || $("#search_list").val() == '')

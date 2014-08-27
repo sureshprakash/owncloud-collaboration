@@ -54,8 +54,7 @@ $(document).ready(function()
 		// Creating new project or updating existing project
 	if($('input[name="pid"]').length == 0)
 	{
-		$("#create_project img").css({opacity: 1.0});
-		$("#create_project a").css({color: 'black', backgroundColor: '#E9E3E3'});
+		$("#create_project").css({color: 'black', backgroundColor: '#E9E3E3'});
 	}
 	else
 	{

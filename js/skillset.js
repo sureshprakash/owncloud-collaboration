@@ -9,8 +9,7 @@ var skill_count = 0;
 
 $(document).ready(function()
 {
-	$("#skill_set img").css({opacity: 1.0});
-	$("#skill_set a").css({color: 'black', backgroundColor: '#E9E3E3'});
+	$("#skill_set").css({color: 'black', backgroundColor: '#E9E3E3'});
 	$("#collaboration_content").css({marginLeft: $("#tabs_collaboration").outerWidth(true), padding: '10px'});
 	
 	$("#btn_add_skill").bind("click", addSkill);

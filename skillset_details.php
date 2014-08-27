@@ -27,6 +27,7 @@ OCP\App::setActiveNavigationEntry( 'collaboration' );
 OCP\Util::addScript('collaboration', 'skillset_details');
 
 OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'skillset_details');
 
 $tpl = new OCP\Template("collaboration", "skillset_details", "user");
@@ -34,9 +35,9 @@ $tpl = new OCP\Template("collaboration", "skillset_details", "user");
 if(isset($_GET['project']))
 {
 	$skills = OC_Collaboration_Task::getTasksCount($_GET['project']);
-	
+
 	if(!OC_Collaboration_Project::isMemberWorkingOnProject(OC_User::getUser(), $_GET['project']) || $skills == false)
-	{	
+	{
 		header('Location: ' . \OCP\Util::linkToRoute('collaboration_route', array('rel_path'=>'dashboard')));
 		\OCP\Util::writeLog('collaboration', OC_User::getUser() . ' is trying to access project ' . $_GET['project'], \OCP\Util::WARN);
 		exit();

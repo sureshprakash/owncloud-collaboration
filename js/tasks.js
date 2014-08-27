@@ -17,8 +17,7 @@ function getDocHeight()
 
 $(document).ready(function()
 {
-	$("#tasks img").css({opacity: 1.0});
-	$("#tasks a").css({color: 'black', backgroundColor: '#E9E3E3'});
+	$("#tasks").css({color: 'black', backgroundColor: '#E9E3E3'});
 	$("#collaboration_content").css({marginLeft: $("#tabs_collaboration").outerWidth(true), padding: '10px'});
 
 	$(window).bind('scroll', checkToLoadMoreTasks);
@@ -59,6 +58,7 @@ $(document).ready(function()
 
 function editTask(event)
 {
+	alert();
 	$('#collaboration_content').append('<form id="edit_task" method="post" action="' + OC.Router.generate('collaboration_route', {rel_path: 'update_task'}) + '" ><input type="hidden" name="tid" value="' + this.id.substr(9) + '" /></form>');
 	$("#edit_task").submit();
 

@@ -24,26 +24,29 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
+
 OCP\Util::addScript('collaboration', 'project_details');
 
+
 OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'project_details');
 
 if(isset($_POST['pid']) && OC_Collaboration_Project::isMemberWorkingOnProject(OC_User::getUser(), $_POST['pid']))
 {
 	$tpl = new OCP\Template("collaboration", "project_details", "user");
-	
+
 	$details = OC_Collaboration_Project::readProject($_POST['pid']);
-	
+
 	if(isset($details['pid']))
 	{
 		$tpl->assign('project_details', $details);
-		
+
 		if(isset($_POST['msg']))
 		{
 			$tpl->assign('msg', $_POST['msg']);
 		}
-		
+
 		$tpl->printPage();
 	}
 	else

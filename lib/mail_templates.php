@@ -19,10 +19,10 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
- 
+
 /**
  * This class manages the mail notifications
- */ 
+ */
 
 class OC_Collaboration_Mail
 {
@@ -37,33 +37,33 @@ class OC_Collaboration_Mail
 		{
 			$member_role = array();
 			$member_email = array();
-		
+
 			$cnt = count($details);
-		
+
 			for($i = 0; $i < $cnt; $i++)
 			{
 				$member_role[$details[$i]['member']][count($member_role[$details[$i]['member']])] = $details[$i]['role'];
 				$member_email[$details[$i]['member']] = $details[$i]['email'];
 			}
-		
+
 			$subject = 'You are assigned to the project \''.$title.'\'';
-		
+
 			foreach($member_role as $member => $roles)
 			{
 				$message = 'Hello '.$member.',';
 				$message .= '<br /><p style="text-indent: 50px;" >';
 				$message .= 'You are assigned to the project \''.$title.'\' with the following role(s).';
-			
+
 				$i = 1;
 				foreach($roles as $role)
 				{
 					$message .= '<br />' . $i++ . ') ' . $role;
 				}
-			
+
 				$message .= '<br /><br />';
 				$message .= 'For further details, logon to your owncloud account.';
 				$message .= '<br /><br />';
-			
+
 				OC_Mail::send($member_email[$member], $member, $subject, $message, OC_Config::getValue('mail_smtpname', ''), 'Owncloud Collaboration App', true);
 			}
 		}
@@ -87,7 +87,7 @@ class OC_Collaboration_Mail
 		try
 		{
 			$subject = 'You are assigned a task \''.$title.'\'';
-		
+
 			$message = 'Hello '.$member.',';
 			$message .= '<br /><p style="text-indent: 50px;" >';
 			$message .= 'You are assigned to the task \''.$title.'\' under the project \'' . OC_Collaboration_Project::getProjectTitle($pid) . '\'.';
@@ -98,8 +98,16 @@ class OC_Collaboration_Mail
 			$message .= '</span>'.$deadline.'</p><br /><br />';
 			$message .= 'For further details, logon to your owncloud account.';
 			$message .= '<br /><br />';
-			
-			OC_Mail::send(OC_Preferences::getValue($member, 'settings', 'email'), $member, $subject, $message, OC_Config::getValue('mail_smtpname', ''), 'Owncloud Collaboration App', true);
+
+			\OC_Mail::send(
+        OC_Preferences::getValue($member, 'settings', 'email'),
+        $member,
+        $subject,
+        $message,
+        OC_Config::getValue('mail_smtpname', ''),
+        'Owncloud Collaboration App',
+        true
+      );
 		}
 		catch(\Exception $e)
 		{

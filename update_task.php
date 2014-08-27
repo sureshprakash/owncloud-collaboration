@@ -24,15 +24,16 @@
 
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
-OCP\Util::addStyle('collaboration', 'tabs');
-OCP\Util::addStyle('collaboration', 'update_task');
 
 OCP\Util::addStyle('collaboration/3rdparty', 'jquery-ui-timepicker-addon');
-
 OCP\Util::addScript('collaboration', 'update_task');
-
 OCP\Util::addScript('collaboration/3rdparty', 'jquery-ui-sliderAccess');
 OCP\Util::addScript('collaboration/3rdparty', 'jquery-ui-timepicker-addon');
+
+
+OCP\Util::addStyle('collaboration', 'content_header');
+OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'update_task');
 
 $l = OC_L10N::get('collaboration');
 
@@ -46,7 +47,7 @@ if($bol == true)
 	{
 		$tpl->assign('title', $l->t('Update Task'));
 		$tpl->assign('submit_btn_name', $l->t('Update'));
-	
+
 		$tpl->assign('tid', $_POST['tid']);
 		$tpl->assign('task_details', OC_Collaboration_Task::readTask($_POST['tid']));
 	}
@@ -56,7 +57,7 @@ if($bol == true)
 		$tpl->assign('submit_btn_name', $l->t('Create'));
 		$tpl->assign('projects', OC_Collaboration_Project::getProjects(OC_User::getUser()));
 	}
-	
+
 	$tpl->printPage();
 }
 else

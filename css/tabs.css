@@ -33,3 +33,21 @@
 	padding: 5px;
 	height: 100%;
 }
+
+.tabs_spacer {
+    height: 50px;
+}
+
+
+#create_project, #create_task {
+    margin-left: 0;
+}
+
+#projects, #tasks {
+    margin-right: 0;
+}
+
+#create_project .svg, #create_task .svg {
+    width: 14px; 
+    display: inline-block;
+}

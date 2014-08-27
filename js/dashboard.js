@@ -17,8 +17,7 @@ function getDocHeight()
 
 $(document).ready(function()
 {
-	$("#dashboard img").css({opacity: 1.0});
-	$("#dashboard a").css({color: 'black', backgroundColor: '#E9E3E3'});
+	$("#dashboard").css({color: 'black', backgroundColor: '#E9E3E3'});
 	$("#collaboration_content").css({marginLeft: $("#tabs_collaboration").outerWidth(true), padding: '10px'});
 	
 	$(".details").css({height: $(".creation_details").outerHeight()});
@@ -136,7 +135,8 @@ function filter()
 
 function comment(id)
 { 
-		window.location.href = OC.Router.generate('collaboration_route', {'rel_path': 'comment'}) + '?post=' + id; 
+		/*window.location.href = OC.Router.generate('collaboration_route', {'rel_path': 'comment'}) + '?post=' + id;*/
+		window.location.href = OC.generateUrl('apps/collaboration/dashboard/{comment}') + '?post=' + id; 
 }
 
 function showLoadingImage(id)

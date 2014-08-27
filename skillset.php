@@ -22,12 +22,17 @@
 \OCP\User::checkLoggedIn();
 \OCP\App::checkAppEnabled('collaboration');
 
+
 OCP\App::setActiveNavigationEntry( 'collaboration' );
+
 
 OCP\Util::addScript('collaboration', 'skillset');
 
+
 OCP\Util::addStyle('collaboration', 'tabs');
+OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'skillset');
+
 
 $tpl = new OCP\Template("collaboration", "skillset", "user");
 $tpl->printPage();
