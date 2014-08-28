@@ -16,11 +16,20 @@
 }
 
 
+.unit-description
+{
+	margin:20px 0 20px 0;
+}
+
 /*content body */
 #content-body
 {
 	clear:both;
 	padding:10px;
+	font-family: sans-serif;
+	line-height:1.48em;
+	letter-spacing: 0.0325em;
+	color:#4f4f4f;
 }
 
 .unit
@@ -35,29 +44,34 @@
 {
   .unit {
     width:300px;
-		margin:10px 10px 0 10px;
+		margin:10px;
   }
 }
 
 
 .cb_title
 {
-	padding: 5px;
+	padding: 10px 5px 10px 10px;
 	background-color: #1D2D44;
-	color: white;
-	font-size: 16px;
+	color:#ccc;
+	font-size: 17px;
 }
 
 .cb-wrapper
 {
-	padding:5px;
+	padding:10px;
 }
 
+
+
+#contents,
 .contents
 {
-	padding:7px 0 7px 0;
-	font-size: 14px;
+	padding:0 0 14px 0;
+	font-size: 15px;
 }
+
+
 h2
 {
 
@@ -84,7 +98,8 @@ table td h2,
 
 .cb-date
 {
-	font-size: 10px;
+  padding:2px 0 2px 0;
+	font-size: 13px;
 }
 
 

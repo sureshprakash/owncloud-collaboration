@@ -25,12 +25,14 @@
 OCP\App::setActiveNavigationEntry( 'collaboration' );
 
 
-OCP\Util::addStyle('collaboration/3rdparty', 'jquery-ui-timepicker-addon');
 OCP\Util::addScript('collaboration', 'update_task');
 OCP\Util::addScript('collaboration/3rdparty', 'jquery-ui-sliderAccess');
 OCP\Util::addScript('collaboration/3rdparty', 'jquery-ui-timepicker-addon');
+OCP\Util::addScript('collaboration/3rdparty', 'jquery-te');
 
 
+OCP\Util::addStyle('collaboration/3rdparty', 'jquery-te');
+OCP\Util::addStyle('collaboration/3rdparty', 'jquery-ui-timepicker-addon');
 OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'tabs');
 OCP\Util::addStyle('collaboration', 'update_task');

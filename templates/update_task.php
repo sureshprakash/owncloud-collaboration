@@ -78,7 +78,7 @@ print_unescaped($this->inc('tabs'));
 						<span class="required">*</span>
 					</td>
 					<td>
-						<textarea maxlength="3000" name="description" required ><?php if(isset($_['tid'])) p($_['task_details']['description']); ?></textarea>
+						<textarea maxlength="3000" name="description" class="text-editor" required ><?php if(isset($_['tid'])) p($_['task_details']['description']); ?></textarea>
 					</td>
 				</tr>
 
