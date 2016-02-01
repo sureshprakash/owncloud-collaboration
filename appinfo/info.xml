@@ -6,5 +6,11 @@
 	<version>1.0</version>
 	<licence>APGL</licence>
 	<author>Dr.J.Akilandeswari, R.Ramki, R.Sasidharan and P.Suresh</author>
-	<require>5</require>
+	<requiremin>5</requiremin>
+	<dependencies>
+        	<owncloud min-version="5.0.0" max-version="7.0.5"/>
+    	</dependencies>
+    	<repository type="git">https://github.com/sureshprakash/owncloud-collaboration.git</repository>
+    	<website>https://github.com/sureshprakash/owncloud-collaboration</website>
+    	<bugs>https://github.com/sureshprakash/owncloud-collaboration/issues</bugs>
 </info>
