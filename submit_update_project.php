@@ -33,7 +33,7 @@ OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'display_message');
 
 
-$l = OC_L10N::get('collaboration');
+$l = \OCP\Util::getL10N('collaboration');
 
 // Fetch member list
 $details = array(array());

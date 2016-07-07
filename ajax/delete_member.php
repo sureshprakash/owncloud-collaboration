@@ -29,7 +29,7 @@ if(isset($_POST['member']) && isset($_POST['pid']) && isset($_POST['role']))
 {
 	if(OC_Collaboration_Project::isCompleted($_POST['pid']))
 	{
-		OC_Log::write('collaboration', OC_User::getUser() . ' is trying to delete member from a completed project with ID ' . $_POST['pid'], OCP\Util::WARN);
+		OCP\Util::writeLog('collaboration', OC_User::getUser() . ' is trying to delete member from a completed project with ID ' . $_POST['pid'], OCP\Util::WARN);
 		OCP\JSON::error();
 		exit();
 	}

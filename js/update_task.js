@@ -51,12 +51,12 @@ $(document).ready(function()
 		$("#create_task img").css({opacity: 1.0});
 		$("#create_task a").css({color: 'black', backgroundColor: '#E9E3E3'});
 
-		$("#project").chosen(
+/*		$("#project").chosen(
 		{
 			no_results_text: t('collaboration', 'No matches found!'),
 			disable_search_threshold: 5
 		});
-	}
+*/	}
 	else
 	{
 		var status = $('#task_status').text();

@@ -25,7 +25,7 @@ $(document).ready(function()
 
 	num_tasks = $(".unit").length;
 
-	$("#projects_list").chosen(
+/*	$("#projects_list").chosen(
 	{
 		no_results_text: t('collaboration', 'No matches found!'),
 		disable_search_threshold: 5
@@ -36,7 +36,7 @@ $(document).ready(function()
 		no_results_text: t('collaboration', 'No matches found!'),
 		disable_search_threshold: 8
 	});
-
+*/
 	$("#projects_list").bind('change', filter);
 	$("#status_list").bind('change', filter);
 

@@ -32,7 +32,7 @@ OCP\Util::addStyle('collaboration', 'tabs');
 OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'report');
 
-$l = OC_L10N::get('collaboration');
+$l = \OCP\Util::getL10N('collaboration');
 
 $bol = OC_Collaboration_Project::isAdmin();
 

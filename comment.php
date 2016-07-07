@@ -53,7 +53,7 @@ else
 
 function goToDashboard()
 {
-	header('Location: ' . \OCP\Util::linkToRoute('collaboration_route', 'dashboard'));
+	header('Location: ' . \OCP\Util::linkToRoute('collaboration_route', ['rel_path'=>'dashboard']));
 	exit();
 }
 

@@ -24,12 +24,12 @@ $(document).ready(function()
 		loadMembersList();
 	}
 	
-	$("#project").chosen(
+/*	$("#project").chosen(
 	{
 		no_results_text: t('collaboration', 'No matches found!'),
 		disable_search_threshold: 5
 	});
-	$("#project").bind("change", loadMembersList);
+*/	$("#project").bind("change", loadMembersList);
 	$("#notify_to").multiselect(
 	{
 		show: ["slide", 200], 

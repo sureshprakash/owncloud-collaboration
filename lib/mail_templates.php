@@ -69,7 +69,7 @@ class OC_Collaboration_Mail
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -100,7 +100,7 @@ class OC_Collaboration_Mail
 			$message .= '<br /><br />';
 
 			\OC_Mail::send(
-        OC_Preferences::getValue($member, 'settings', 'email'),
+        \OC::$server->getConfig()->getUserValue($member, 'settings', 'email'),
         $member,
         $subject,
         $message,
@@ -111,7 +111,7 @@ class OC_Collaboration_Mail
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}

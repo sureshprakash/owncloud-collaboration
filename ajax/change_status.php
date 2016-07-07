@@ -44,6 +44,6 @@ if(isset($_POST['tid']) && isset($_POST['event']) && isset($_POST['reason']))
 	OCP\JSON::success(array());
 	exit();
 }
-OC_Log::write('collaboration', $_POST['tid'] . ' ' . $_POST['event'] . ' ' . $_POST['reason'], OCP\Util::DEBUG);
+OCP\Util::writeLog('collaboration', $_POST['tid'] . ' ' . $_POST['event'] . ' ' . $_POST['reason'], OCP\Util::DEBUG);
 OC_JSON::error();
 exit();

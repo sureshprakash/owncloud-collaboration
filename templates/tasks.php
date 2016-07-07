@@ -100,11 +100,10 @@
 						  </form>
 							 <?php if(strcasecmp(OC_Collaboration_Task::getTaskCreator($each['tid']), OC_User::getUser()) == 0) {  ?>
                  <?php	if(strcasecmp($each['status'], 'Cancelled') != 0 && strcasecmp($each['status'], 'Verified') != 0)	{ ?>
-										<div class="edit" >
-											<button class="btn_edit" id="<?php p('btn_edit_' . $each['tid'])?>" >
-												<?php	p($l->t('Edit')); ?>
-											</button>
-										</div>
+                          <form class="view_details" action="<?php p(\OCP\Util::linkToRoute('collaboration_route', array('rel_path'=>'update_task'))); ?>" method="post" >
+                                <input type="hidden" name="tid" value="<?php p($each['tid']); ?>" />
+                                <input type="submit" value="<?php p($l->t('Edit'));	?>" />
+                          </form>
 						  	  <?php } ?>
 								<?php } ?>
                 <?php
