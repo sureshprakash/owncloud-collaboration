@@ -37,7 +37,7 @@ OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'tabs');
 OCP\Util::addStyle('collaboration', 'update_task');
 
-$l = OC_L10N::get('collaboration');
+$l = \OCP\Util::getL10N('collaboration');
 
 $tpl = new OCP\Template('collaboration', 'update_task', 'user');
 

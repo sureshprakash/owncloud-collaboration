@@ -91,11 +91,10 @@ print_unescaped($this->inc('tabs'));
 								   <input type="submit" value="<?php p($l->t('View details'));	?>" />
 						     </form>
 						     <?php if(OC_Collaboration_Project::isAdmin()) { ?>
-						       <div class="edit" >
-							       <button class="btn_edit" id="<?php p('btn_edit_' . $each['pid'])?>" >
-								      <?php p($l->t('Edit')); ?>
-							       </button>
-						       </div>
+                                <form class="view_details" action="<?php p(\OCP\Util::linkToRoute('collaboration_route', array('rel_path'=>'update_project'))); ?>" method="post" >
+								   <input type="hidden" name="pid" value="<?php p($each['pid']); ?>" />
+								   <input type="submit" value="<?php p($l->t('Edit'));	?>" />
+                                </form>
 						     <?php	} ?>
 					     </div>
             </div>

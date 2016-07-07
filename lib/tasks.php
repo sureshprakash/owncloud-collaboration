@@ -33,7 +33,7 @@ class OC_Collaboration_Task
 	 */
 	public static function getPriorityString($num)
 	{
-		$l = OC_L10N::get('collaboration');
+		$l = \OCP\Util::getL10N('collaboration');
 
 		switch($num)
 		{
@@ -185,7 +185,7 @@ class OC_Collaboration_Task
 	 */
 	public static function translateEvent($ev)
 	{
-		$l = OC_L10N::get('collaboration');
+		$l = \OCP\Util::getL10N('collaboration');
 
 		switch($ev)
 		{
@@ -254,7 +254,7 @@ class OC_Collaboration_Task
 			}
 			catch(\Exception $e)
 			{
-				OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+				OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 				return false;
 			}
 
@@ -275,7 +275,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -321,7 +321,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 
@@ -381,7 +381,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 
@@ -487,7 +487,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -550,7 +550,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 			{
-				OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+				OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 				return false;
 			}
 	}
@@ -610,7 +610,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -630,7 +630,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -652,7 +652,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -673,7 +673,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -694,7 +694,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -716,7 +716,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -749,7 +749,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -771,7 +771,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -837,7 +837,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -869,7 +869,7 @@ class OC_Collaboration_Task
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 

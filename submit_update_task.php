@@ -32,7 +32,7 @@ OCP\Util::addScript('collaboration', 'create_event');
 OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'tabs');
 
-$l = OC_L10N::get('collaboration');
+$l = \OCP\Util::getL10N('collaboration');
 
 $eve = new OCP\Template('collaboration', 'event_form', 'user');
 

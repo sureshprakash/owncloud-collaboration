@@ -27,12 +27,12 @@ $(document).ready(function()
 
 	num_projects = $(".unit").length;
 	
-	$("#search_list").chosen(
+/*	$("#search_list").chosen(
 	{
 		no_results_text: t('collaboration', 'No matches found!'),
 		disable_search_threshold: 5
 	});
-	
+*/	
 	$("#search_list").bind('change', function() { $("#search_form").submit(); });
 	
 	$(".btn_edit").bind('click', editProject);

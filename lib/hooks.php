@@ -61,11 +61,11 @@ class OC_Collaboration_Hooks
 		
 			\OCP\DB::commit();
 			
-			OC_Log::write('collaboration', 'User deletion notification posted.', OCP\Util::INFO);
+			OCP\Util::writeLog('collaboration', 'User deletion notification posted.', OCP\Util::INFO);
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -81,12 +81,12 @@ class OC_Collaboration_Hooks
 			{
 				$content = 'A ' . $args['itemType'] . ' has been shared with you at location /Shared' . $args['fileTarget'];
 				OC_Collaboration_Post::createPost('File Shared', $content, $args['uidOwner'], NULL, 'File Share', array($args['shareWith']));
-				OC_Log::write('collaboration', 'File share notification posted.', OCP\Util::INFO);
+				OCP\Util::writeLog('collaboration', 'File share notification posted.', OCP\Util::INFO);
 			}
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}

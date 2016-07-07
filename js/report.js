@@ -9,7 +9,7 @@ $(document).ready(function()
 	$("#report").css({color: 'black', backgroundColor: '#E9E3E3'});
 	$("#collaboration_content").css({marginLeft: $("#tabs_collaboration").outerWidth(true), padding: '10px'});
 	
-	$("#projects_list").chosen(
+/*	$("#projects_list").chosen(
 	{
 		no_results_text: t('collaboration', 'No matches found!'),
 		disable_search_threshold: 5
@@ -19,7 +19,7 @@ $(document).ready(function()
 	{
 		disable_search_threshold: 4
 	});
-	
+*/	
 	$("#projects_list").bind('change', generateReport);
 	$("#report_type").bind('change', generateReport);
 });

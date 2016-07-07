@@ -25,7 +25,7 @@ OCP\JSON::callCheck();
 
 OCP\JSON::checkAppEnabled('collaboration');
 
-$l=OC_L10N::get('collaboration');
+$l=\OCP\Util::getL10N('collaboration');
 
 if(isset($_POST['member']) && isset($_POST['start']) && isset($_POST['count']) && isset($_POST['project']))
 {

@@ -59,13 +59,8 @@
 
 			<tr>
 				<td>
-					<?php p($l->t('Description')); ?>
+					<?php p($l->t('Description')); ?>:
 				</td>
-
-				<td>
-					:
-				</td>
-
 				<td>
 					<textarea maxlength="3000" name="description" ><?php if($pid != -1) p($_['project_details']['description']); ?></textarea>
 				</td>
@@ -75,11 +70,7 @@
 			<!--
 			<tr>
 				<td>
-					<?php p($l->t('Creator')); ?>
-				</td>
-
-				<td>
-					:
+					<?php p($l->t('Creator')); ?>:
 				</td>
 
 				<td>
@@ -90,13 +81,8 @@
 
 			<tr>
 				<td>
-					<?php p($l->t('Deadline')); ?>
+					<?php p($l->t('Deadline')); ?>: <span class="required">*</span>
 				</td>
-
-				<td>
-					: <span class="required">*</span>
-				</td>
-
 				<td>
 					<input type="text" id="deadline" name="deadline" placeholder="MM/DD/YYYY" <?php if($pid != -1) print_unescaped('value="'.OC_Collaboration_Time::convertDBTimeToUIDate($_['project_details']['ending_date']).'"'); ?> autocomplete="off" required/>
 					<?php
@@ -113,13 +99,8 @@
 
 			<tr>
 				<td>
-					<?php p($l->t('Members')); ?>
+					<?php p($l->t('Members')); ?>:
 				</td>
-
-				<td>
-					:
-				</td>
-
 				<td id="remove_old_member_loading_img" >
 				</td>
 			</tr>

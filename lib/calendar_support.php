@@ -43,7 +43,7 @@ class OC_Collaboration_Calendar
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -65,7 +65,7 @@ class OC_Collaboration_Calendar
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -87,7 +87,7 @@ class OC_Collaboration_Calendar
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}
@@ -109,7 +109,7 @@ class OC_Collaboration_Calendar
 		}
 		catch(\Exception $e)
 		{
-			OC_Log::write('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
+			OCP\Util::writeLog('collaboration', __METHOD__ . ', Exception: ' . $e->getMessage(), OCP\Util::DEBUG);
 			return false;
 		}
 	}

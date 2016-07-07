@@ -32,7 +32,7 @@ OCP\Util::addStyle('collaboration', 'tabs');
 OCP\Util::addStyle('collaboration', 'content_header');
 OCP\Util::addStyle('collaboration', 'display_message');
 
-$l = OC_L10N::get('collaboration');
+$l = \OCP\Util::getL10N('collaboration');
 
 $tpl = new OCP\Template('collaboration', 'display_message', 'user');
 $tpl->assign('title', $l->t('Loading...'));

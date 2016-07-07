@@ -6,7 +6,7 @@
 
 var num_posts = 0;
 
-function getDocHeight() 
+function getDocHeight()
 {
     return Math.max(
         Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
@@ -19,28 +19,28 @@ $(document).ready(function()
 {
 	$("#dashboard").css({color: 'black', backgroundColor: '#E9E3E3'});
 	$("#collaboration_content").css({marginLeft: $("#tabs_collaboration").outerWidth(true), padding: '10px'});
-	
+
 	$(".details").css({height: $(".creation_details").outerHeight()});
 
 	$(window).bind('scroll', checkToLoadMorePosts);
 
 	num_posts = $(".unit").length;
-		
-	$("#projects_list").chosen(
+
+/*	$("#projects_list").chosen(
 	{
 		no_results_text: t('collaboration', 'No matches found!'),
 		disable_search_threshold: 5
 	});
-	
+*/
 	$("#projects_list").bind('change', filter);
-	
+
 	$(".btn_comment").bind('click', function() { comment(this.id.substring(12)); });
 });
 
 function checkToLoadMorePosts()
 {
 	var beforeBottomInPx = 150;
-	
+
 	if(($(window).scrollTop() + $(window).height()) > (getDocHeight() - beforeBottomInPx))
 	{
    		loadMorePosts();
@@ -58,19 +58,19 @@ function loadMorePosts()
 function loadPosts()
 {
 	var request_count = 10;
-	
+
 	$.ajax(
 	{
 		type: 'POST',
 		url: OC.filePath('collaboration', 'ajax', 'load_posts.php'),
-		data: 
+		data:
 		{
 			member: oc_current_user,
 			start: num_posts,
 			count: request_count,
 			project: (($("#projects_list").val() == 'ALL')? '': $("#projects_list").val())
 		},
-		success: 
+		success:
 		function(data)
 		{
 			$("#img_loading").remove();
@@ -78,14 +78,14 @@ function loadPosts()
 			if (data.status == 'success')
 			{
 				$("#posts").append(data.posts);
-				
+
 				var post_cnt = $(".unit").length;
-				
+
 				if((num_posts + request_count) == post_cnt)
 				{
 					$(window).bind('scroll', checkToLoadMorePosts);
 				}
-				
+
 				num_posts = post_cnt;
 				$(".btn_comment").bind('click', function() { comment(this.id.substring(12)); });
 				$(".details").css({height: $(".creation_details").outerHeight()});
@@ -94,7 +94,7 @@ function loadPosts()
 			{
 				alert('Unable to read more posts. Please try again later.');
 			}
-			
+
 		}
 	});
 }
@@ -107,20 +107,20 @@ function loadProjectsList()
 		type: 'POST',
 		url: OC.filePath('collaboration', 'ajax', 'load_projects.php'),
 		data: {},
-		success: 
+		success:
 		function(data)
 		{
 			if (data.status == 'success')
 			{
 				var list = 'Filter by project: <select id="projects_list" ><option value="-1" selected="selected" >ALL</option>';
-				
+
 				for(var project in data.projects)
 				{
 					list += '<option value="' + project + '" >' + data.projects[project] + '</option>';
 				}
-				
+
 				list += '</select>';
-				
+
 				$("#project_list_container").html(list);
 			}
 		}
@@ -134,9 +134,9 @@ function filter()
 }
 
 function comment(id)
-{ 
+{
 		/*window.location.href = OC.Router.generate('collaboration_route', {'rel_path': 'comment'}) + '?post=' + id;*/
-		window.location.href = OC.generateUrl('apps/collaboration/dashboard/{comment}') + '?post=' + id; 
+		window.location.href = OC.generateUrl('apps/collaboration/comment') + '?post=' + id;
 }
 
 function showLoadingImage(id)
@@ -144,11 +144,11 @@ function showLoadingImage(id)
 	var div = document.createElement('div');
 	$(div).css({width: '100%', textAlign: 'center'});
 	div.setAttribute('id', 'img_loading');
-	
+
 	var img = document.createElement('img');
 	img.setAttribute('src', OC.imagePath('core', 'loading.gif'));
 	$(img).css({width: '15px', height: '15px'});
-	
+
 	$(div).append(img);
 	$("#" + id).append(div);
 }
